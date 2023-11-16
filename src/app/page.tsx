@@ -1,13 +1,12 @@
+import Categories from "@/components/templates/Categories";
+import Header from "@/components/templates/Header";
 
-import { Inter } from "next/font/google"
-
-
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <main>
-      <>E-Commerce SanJuan</>
+      <Header/>
+      <Categories/>
     </main>
   )
 }
