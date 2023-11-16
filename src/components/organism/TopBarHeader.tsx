@@ -7,6 +7,7 @@ function TopBarHeader() {
     <div>
         <CustomImage src="/assets/LogoSanJuan.png" alt="SanJuanLogo" width={46} height={52} />
         <Number />
+        <p>test</p>
     </div>
   )
 }
