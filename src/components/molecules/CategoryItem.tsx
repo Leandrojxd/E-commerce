@@ -1,5 +1,7 @@
 import React from 'react'
 import CustomImage from '../atoms/CustomImage'
+import styles from 'public/home.module.css'
+
 
 type CategoryItemProps = {
     source: string,
@@ -10,7 +12,7 @@ type CategoryItemProps = {
 function CategoryItem({source,title,subtitle}:CategoryItemProps) {
   return (
     <div>
-        <CustomImage src={source} alt='Category' width={50} height={50}/>
+        <CustomImage src={source} alt='Category' className={styles.itemImg_style}/>
         <label>
             <h3>{title}</h3>
             <p>{subtitle}</p>

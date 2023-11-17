@@ -1,13 +1,13 @@
 import React from 'react'
-import CustomImage from '../atoms/CustomImage'
-import Number from '../atoms/Number'
+import Number from '../atoms/Number';
+import styles from 'public/home.module.css';
+import BusinessLogoName from '../molecules/BusinessLogoName';
 
 function TopBarHeader() {
   return (
-    <div>
-        <CustomImage src="/assets/LogoSanJuan.png" alt="SanJuanLogo" width={46} height={52} />
+    <div className={styles.topBarHeader}>
+        <BusinessLogoName />
         <Number />
-        <p>test</p>
     </div>
   )
 }

@@ -1,0 +1,81 @@
+
+.cellphone{
+    display: inline-flex;
+    padding: 10px;
+    padding-bottom: 3px;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625px;
+    border-radius: 8px;
+    border: 1px solid var(--neutral-500, #E1E1E1);
+    background: var(--neutral-100, #FCFEFF); 
+
+}
+.cellphone_text{
+    color: var(--dark, #030303);
+    font-family: Outfit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: red;
+}
+
+.topBarHeader{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.style_header_text{
+    color: #101010;
+    font-family: Montserrat Alternates;
+    font-size: 22.609px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+}
+
+.logo_style{
+    width: 2.8rem;
+    height: 3.25rem;
+}
+.promo_style{
+    width: 22rem;
+    height: 9.12rem;
+}   
+.itemImg_style{
+    width: 2.8;
+    height: 2.8;
+}
+.search_style{
+    width: 1.41rem;
+    height: 1.41rem;
+}
+
+.searchBar_style{
+    display: flex;
+    width: 346.667px;
+    padding: 15.072px 9.42px;
+    align-items: center;
+    gap: 9.42px;
+
+    border-radius: 7.536px;
+    border: 4px solid var(--neutral-500, #E1E1E1);
+    background: var(--neutral-100, #FCFEFF);
+}
+
+.searchInput_style{
+    color: var(--dark, #030303);
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    outline: none;
+}
+.logoName_styleFlex{
+    display: flex;
+    flex-direction: row;
+}

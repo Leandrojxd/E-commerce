@@ -1,4 +1,5 @@
 import React from 'react'
+import style from 'public/home.module.css'
 
 type SearchInputProps = {
   placeholder: string;
@@ -7,7 +8,7 @@ type SearchInputProps = {
 function SearchInput({placeholder}: SearchInputProps) {
   return (
     <div>
-        <input type="text" placeholder={placeholder} />
+        <input type="text" placeholder={placeholder} className={style.searchInput_style} />
     </div>
   )
 }
