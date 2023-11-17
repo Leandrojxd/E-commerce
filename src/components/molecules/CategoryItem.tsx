@@ -11,12 +11,10 @@ type CategoryItemProps = {
 
 function CategoryItem({source,title,subtitle}:CategoryItemProps) {
   return (
-    <div>
+    <div className={styles.categoryItem}>
         <CustomImage src={source} alt='Category' className={styles.itemImg_style}/>
-        <label>
-            <h3>{title}</h3>
-            <p>{subtitle}</p>
-        </label>
+        <h3>{title}</h3>
+        <p>{subtitle}</p>
     </div>
   )
 }

@@ -6,7 +6,7 @@ import styles from 'public/home.module.css'
 
 function Header() {
   return (
-    <div>
+    <div className={styles.Header}>
         <TopBarHeader/>
         <CustomImage src='/assets/Promo.png' alt="Promo.png" className={styles.promo_style}/>
         <Search />
