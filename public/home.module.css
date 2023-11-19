@@ -137,3 +137,55 @@
     font-weight: 400;
     line-height: normal;
 }
+
+.sort_button_style{
+    width: 52px;
+    height: 53px;
+    border-radius: 7.536px;
+    border: 4px solid var(--neutral-500, #E1E1E1);
+    background: var(--neutral-100, #FCFEFF);
+}
+
+.title_card{
+    color: var(--dark, #030303);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.32px;
+}
+
+.brand_card{
+    color: var(--neutral-700, #777B8A);
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.description_card{
+    color: var(--dark, #030303);
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.price_card{
+    color: var(--primary, #4187F7);
+    font-family: 'Outfit', sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.product_description_style{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}

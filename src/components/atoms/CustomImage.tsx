@@ -3,7 +3,7 @@ import Image from "next/image";
 type Props = {
     src:string,
     alt:string,
-    className: string,
+    className?: string,
 }
 
 function CustomImage({src, alt, className}: Props) 
