@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Outfit:wght@100;200;300;400;700;800&display=swap');
 
 .cellphone{
     display: inline-flex;
@@ -12,7 +13,8 @@
 }
 .cellphone_text{
     color: var(--dark, #030303);
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
     font-size: 1rem;
     font-style: normal;
     margin: 0;
@@ -27,7 +29,7 @@
 
 .style_header_text{
     color: #101010;
-    font-family: Montserrat Alternates;
+    font-family: 'Montserrat', sans-serif;
     font-size: 22.609px;
     font-style: normal;
     font-weight: 900;
@@ -54,12 +56,12 @@
 }
 .title_style{
     color: var(--primary-70, #101010);
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: 18.841px;
     font-style: normal;
     font-weight: 800;
     line-height: normal;
-    text-transform: uppercase;  
+    text-transform: uppercase;
 }
 .searchBar_style{
     display: flex;
@@ -76,7 +78,7 @@
 
 .searchInput_style{
     color: var(--dark, #030303);
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
@@ -102,7 +104,7 @@
 
 .category_string_style_title{
     color: var(--dark, #030303);
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
@@ -111,10 +113,27 @@
 
 .category_string_style_subtitle{
     color: var(--dark, #030303);
-    font-family: Outfit;
+    font-family: 'Outfit', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
 }
 
+.title_text_style{
+    color: var(--dark, #030303);
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.description_text_style{
+    color: var(--dark, #030303);
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
