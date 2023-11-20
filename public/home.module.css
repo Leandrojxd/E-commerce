@@ -154,6 +154,7 @@
     font-weight: 700;
     line-height: normal;
     letter-spacing: -0.32px;
+    margin: 0;
 }
 
 .brand_card{
@@ -163,6 +164,7 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+    margin: 0;
 }
 
 .description_card{
@@ -172,6 +174,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    margin: 0;
+    width:8rem;
 }
 
 .price_card{
@@ -181,6 +185,8 @@
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    margin: 0;
+    margin-top: 20px;
 }
 
 .product_description_style{
@@ -188,4 +194,34 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 4px;
+}
+
+.product_card_style{
+    display: flex;
+    width: 346px;
+    padding: 20px 0px;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid var(--neutral-500, #E1E1E1);
+}
+
+.product_card_img{
+    width: 165px;
+    height: 166px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+    background: var(--neutral-300, #F7F7F7);
+}
+
+.catalog_page_style{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
