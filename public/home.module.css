@@ -239,3 +239,69 @@
     justify-content: space-between;
     gap: 0.5rem;
 }
+.no_results_style{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17.125rem;
+
+    margin-top: 17.26rem;
+}
+.no_results_text_style{
+    color: var(--primary-70, #101010);
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.back_button_style_error{
+    display: flex;
+    width: 8.56rem;
+    height: 40px;
+    padding: 10px 0;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+
+    border-radius: 8px;
+    background: var(--primary, #4187F7);
+}
+
+.back_button_text_style{
+    color: var(--neutral-100, #FCFEFF);
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 19.8px;
+    letter-spacing: 0.3px;
+    
+    margin: 0;
+}
+
+.error_message_text_style{
+    width: 13rem;
+    margin: 1.81rem 0rem;
+
+    color: var(--primary-70, #101010);
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.error_message_position{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 5.5rem;
+}
