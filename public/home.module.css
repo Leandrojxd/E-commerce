@@ -65,15 +65,16 @@
 }
 .searchBar_style{
     display: flex;
-    width: 21.6rem;
-    padding: 15.072px 9.42px;
+    gap: 0.5rem;
+    width: 17.18rem;
     align-items: center;
-    gap: 9.42px;
+    margin: 0;
+    padding: 0.57rem 0.94rem;
 
     border-radius: 7.536px;
     border: 4px solid var(--neutral-500, #E1E1E1);
     background: var(--neutral-100, #FCFEFF);
-    margin-bottom: 1.76rem;
+    margin-bottom: 1rem;
 }
 
 .searchInput_style{
@@ -139,8 +140,8 @@
 }
 
 .sort_button_style{
-    width: 52px;
-    height: 53px;
+    width: 3.25rem;
+    height: 3.31rem;
     border-radius: 7.536px;
     border: 4px solid var(--neutral-500, #E1E1E1);
     background: var(--neutral-100, #FCFEFF);
@@ -224,4 +225,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.sort_icon_style{
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+}
+
+.filter_search_bar_position{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
 }
