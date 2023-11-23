@@ -322,6 +322,29 @@
     background: var(--primary, #4187F7);
 }
 
-.button_shopping_cart_text_style{
+.empty_message_text_style{
 
+    width: 197px;
+
+    color: var(--primary-70, #101010);
+    text-align: center;
+    font-family: 'Outfit',sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.empty_shopping_cart_position{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14rem;
+}
+
+.button_style2{
+    border-radius: 8px;
+    border: 1px solid var(--neutral-500, #E1E1E1);
+    background: var(--neutral-100, #FCFEFF);
 }
