@@ -10,6 +10,9 @@ export default function () {
         <div className={styles.category_products_position}>
             <ProductCard />
             <ProductCard />
+            <ProductCard />
+            <ProductCard />
+            <ProductCard />
         </div>
     </div>
   )
