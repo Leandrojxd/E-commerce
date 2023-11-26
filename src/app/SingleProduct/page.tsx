@@ -1,9 +1,11 @@
-import SingleProductHead from "@/components/molecules/SingleProductHead";
+import SingleProductHeader from "@/components/molecules/SingleProductHeader";
+import SingleProductImage from "@/components/molecules/SingleProductImage";
 
 export default function Product() {
   return (
     <div>
-      <SingleProductHead />
+      <SingleProductImage />
+      <SingleProductHeader />
     </div>
   )
 }
