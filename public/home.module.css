@@ -473,3 +473,10 @@
     border-bottom: 1px solid var(--neutral-500, #E1E1E1);
     background: var(--neutral-300, #F7F7F7);
 }
+
+.single_product_header_position{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: red;
+}
