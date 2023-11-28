@@ -11,7 +11,8 @@ export default function Catalog() {
   return (
     <main className={styles.catalog_page_style}>
       <FilterSearchBar/>
-      <NoResults/>
+      <Categories/>
+      <Products />
     </main>
   )
 }
