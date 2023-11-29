@@ -478,5 +478,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: red;
+    justify-content: space-between;
+    gap: 2rem;
 }
