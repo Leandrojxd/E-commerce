@@ -475,9 +475,25 @@
 }
 
 .single_product_header_position{
+    margin-top: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
     justify-content: space-between;
     gap: 2rem;
+}
+
+.description_single_product_style{
+    margin-top: 2rem;
+
+    color: var(--primary-70, #101010);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.product_name_single_product_position{
+    width: 10rem;
 }

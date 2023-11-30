@@ -5,7 +5,7 @@ function SingleProductHeader() {
   return (
     <div>
       <div className={styles.single_product_header_position}>
-       <div>
+       <div className={styles.product_name_single_product_position}>
             <h1 className={styles.title_card}>CILINDRO DE ALUMINIO DE 1M3</h1>
             <p className={styles.brand_card}>INEGAR</p>
         </div>
