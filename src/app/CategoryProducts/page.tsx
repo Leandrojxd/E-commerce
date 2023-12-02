@@ -7,7 +7,7 @@ import ShoppingBagFooter from '@/components/templates/ShoppingBagFooter'
 export default function () {
   return (
     <div>
-        <TopHeaderCategoryProducts />
+        <TopHeaderCategoryProducts content='GENERADORES DE GASOLINA' />
         <div className={styles.category_products_position}>
             <ProductCard />
             <ProductCard />

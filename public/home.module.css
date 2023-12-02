@@ -600,3 +600,22 @@
     align-items: center;
     justify-content: center;
 }
+
+.booking_product_image_style{
+    width: 82px;
+    height: 82.497px;
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--neutral-300, #F7F7F7);
+    background: rebeccapurple;
+}
+
+.booking_product_img{
+    width: 55.453px;
+    height: 54.931px;
+    flex-shrink: 0;
+}
