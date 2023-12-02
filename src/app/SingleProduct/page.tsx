@@ -1,7 +1,7 @@
 import DescriptionSingleProduct from "@/components/molecules/DescriptionSingleProduct";
-import PlusMinusProduct from "@/components/molecules/PlusMinusProduct";
 import SingleProductHeader from "@/components/molecules/SingleProductHeader";
 import SingleProductImage from "@/components/molecules/SingleProductImage";
+import FooterSingleProduct from "@/components/organism/FooterSingleProduct";
 
 export default function Product() {
   return (
@@ -9,7 +9,7 @@ export default function Product() {
       <SingleProductImage />
       <SingleProductHeader />
       <DescriptionSingleProduct />
-      <PlusMinusProduct />
+      <FooterSingleProduct/>
     </div>
   )
 }
