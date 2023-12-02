@@ -281,6 +281,8 @@
     line-height: 19.8px;
     letter-spacing: 0.3px;
     
+    display: flex;
+    align-items: center;
     margin: 0;
 }
 
@@ -591,4 +593,10 @@
 .footer_single_product_position{
     display:flex;
     gap: 1rem;
+}
+
+.back_products_button_position{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
