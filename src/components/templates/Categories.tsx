@@ -16,7 +16,7 @@ function Categories() {
           throw new Error('Supabase client is null');
         }
 
-        const { data, error } = await supabase.from('Category').select();
+        const { data, error } = await supabase.from('Category').select('*');
 
         if (error) {
           throw error;
@@ -46,7 +46,7 @@ function Categories() {
         />
       ))}
 
-      
+
     </div>
   );
 }

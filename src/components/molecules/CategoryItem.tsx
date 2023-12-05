@@ -9,7 +9,7 @@ type CategoryItemProps = {
     subtitle: string,
 }
 
-function CategoryItem({source,title,subtitle}:CategoryItemProps) {
+function  CategoryItem({source,title,subtitle}:CategoryItemProps) {
   return (
     <div className={styles.categoryItem}>
         <CustomImage src={source} alt='Category' className={styles.itemImg_style}/>
