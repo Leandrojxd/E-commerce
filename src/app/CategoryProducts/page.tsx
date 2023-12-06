@@ -4,7 +4,7 @@ import React from 'react'
 import styles from 'public/home.module.css'
 import ShoppingBagFooter from '@/components/templates/ShoppingBagFooter'
 
-export default function () {
+export default function CategoryProducts() {
   return (
     <div>
         <TopHeaderCategoryProducts content='GENERADORES DE GASOLINA' />
@@ -15,3 +15,4 @@ export default function () {
     </div>
   )
 }
+
