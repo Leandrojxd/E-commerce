@@ -23,6 +23,7 @@ function Categories() {
         }
 
         if (data) {
+          console.log(data)
           setCategories(data);
         }
       } catch (error) {
@@ -31,7 +32,7 @@ function Categories() {
     };
 
     fetchCategories();
-  }, []); // useEffect se ejecutará solo al montar el componente
+  }, []); 
 
   return (
     <div className={styles.categories}>
