@@ -9,11 +9,7 @@ export default function () {
     <div>
         <TopHeaderCategoryProducts content='GENERADORES DE GASOLINA' />
         <div className={styles.category_products_position}>
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
-            <ProductCard />
+
         </div>
         <ShoppingBagFooter/>
     </div>
