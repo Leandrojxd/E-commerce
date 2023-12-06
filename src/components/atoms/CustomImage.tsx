@@ -3,18 +3,23 @@ import Image from "next/image";
 type Props = {
     src:string,
     alt:string,
+    width:number,
+    height:number,
     className?: string,
 }
 
-function CustomImage({src, alt, className}: Props) 
+function CustomImage({src, alt, width, height, className}: Props) 
 {
     return(
         <div>
-            <img
-            src={src}
-            alt={alt}
-            className={className}
+            {src && alt && (
+            <Image
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
             />
+            )}
         </div>
     )
 }

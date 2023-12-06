@@ -8,7 +8,7 @@ function Header() {
   return (
     <div className={styles.Header}>
         <TopBarHeader/>
-        <CustomImage src='/assets/Promo.png' alt="Promo.png" className={styles.promo_style}/>
+        <CustomImage src='/assets/Promo.png' alt="Promo.png" width={348} height={146} className={styles.promo_style}/>
         <Search />
     </div>
   )

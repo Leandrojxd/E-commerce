@@ -1,3 +1,4 @@
+import Image from 'next/image'
 
 type CustomButtonProps = {
     content:string,
@@ -12,8 +13,15 @@ function CustomButton({content, styleText, styleButton,imagePath, imgAlt, itemBu
   return (
       <button className={styleButton}>
         <div className={itemButtonDisplay}>
-          <img src={imagePath} alt={imgAlt}/>
-          <p className={styleText}>{content}</p>
+        {imagePath && imgAlt && (
+          <Image
+            src={imagePath}
+            alt={imgAlt}
+            width={24}
+            height={25}
+          />
+        )}  
+        <p className={styleText}>{content}</p>
         </div>
       </button>
   )

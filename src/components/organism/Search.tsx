@@ -6,7 +6,7 @@ import styles from 'public/home.module.css'
 function Search() {
   return (
     <div className={styles.searchBar_style}>
-        <CustomImage src='/assets/SearchIcon.png' alt='SearchIcon' className={styles.search_style}/>
+        <CustomImage src='/assets/SearchIcon.png' alt='SearchIcon' width={23} height={23} className={styles.search_style}/>
         <SearchInput placeholder="Busca lo que necesitas"/>
     </div>
   )

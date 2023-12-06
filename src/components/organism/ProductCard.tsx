@@ -1,3 +1,5 @@
+"use client"
+
 import CustomImage from "../atoms/CustomImage"
 import ProductDescription from "../molecules/ProductDescription"
 import styles from 'public/home.module.css'
@@ -21,7 +23,7 @@ function ProductCard({ title, brand, description, price }: ProductCardProps) {
       <div className={styles.product_card_style}>
         <ProductDescription title={title} brand={brand} description={description} price={`$us ${price}.00`} />
         <div className={styles.product_card_img}>
-          <CustomImage src='/assets/ProductImage.png' alt='ProductImage' />
+          <CustomImage src='/assets/ProductImage.png' width={112} height={111} alt='ProductImage' />
         </div>
       </div>
     </div>

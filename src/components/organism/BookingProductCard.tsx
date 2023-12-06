@@ -5,7 +5,7 @@ function BookingProductCard() {
   return (
     <div>
         <div className={styles.booking_product_image_style}>
-            <CustomImage src='/assets/ProductImage.png' alt='ProductImage' className={styles.booking_product_img} />
+            <CustomImage src='/assets/ProductImage.png' alt='ProductImage' width={112} height={111} className={styles.booking_product_img} />
         </div>
         <p>CILINDRO DE ALUMINIO DE 1M3</p>
         <p>INEGAR</p>
