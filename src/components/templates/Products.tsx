@@ -42,7 +42,9 @@ function Products() {
         title={product.Name} 
         brand={product.Brand} 
         description={product.Description} 
-        price={product.Price}/>
+        price={product.Price}
+        product_id={product.Product_id}
+        />
       ))}
       
     </div>

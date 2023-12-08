@@ -6,10 +6,7 @@ import FooterSingleProduct from "@/components/organism/FooterSingleProduct";
 export default function Product() {
   return (
     <div>
-      <SingleProductImage />
-      <SingleProductHeader />
-      <DescriptionSingleProduct />
-      <FooterSingleProduct/>
+
     </div>
   )
 }

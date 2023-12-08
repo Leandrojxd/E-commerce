@@ -9,7 +9,7 @@ export default function CategoryProducts() {
     <div>
         <TopHeaderCategoryProducts content='GENERADORES DE GASOLINA' />
         <div className={styles.category_products_position}>
-          <ProductCard title='TITLE PRODUCT' brand='BRAND PRODUCT' description='This is the description' price='25'/>
+          <ProductCard title='TITLE PRODUCT' brand='BRAND PRODUCT' description='This is the description' price='25' product_id='1'/>
         </div>
         <ShoppingBagFooter/>
     </div>
