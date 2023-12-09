@@ -23,7 +23,6 @@ function Categories() {
         }
 
         if (data) {
-          console.log(data)
           setCategories(data);
         }
       } catch (error) {
