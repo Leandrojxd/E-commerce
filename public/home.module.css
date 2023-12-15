@@ -620,7 +620,6 @@
     align-items: center;
     border-radius: 8px;
     background: var(--neutral-300, #F7F7F7);
-    background: rebeccapurple;
 }
 
 .booking_product_img{
@@ -629,6 +628,38 @@
     flex-shrink: 0;
 }
 
+.booking_productcard_position{
+    display: flex;
+    width: 346px;
+    padding: 20px 0px;
+    align-items: center;
+    gap: 44px;
+
+    border-bottom: 1px solid var(--neutral-500, #E1E1E1);
+}
+
 .link_style{
     text-decoration: none;
+}
+.info_reserve_position{
+    display: flex;
+    gap: 7rem;
+}
+
+.plusminus_reserve_section{
+    display: flex;
+    width: 220px;
+    height: 2.7rem;
+    justify-content: center;
+    align-items: center;
+    gap: 29px;
+
+    border-radius: 0.5rem;
+    background: var(--neutral-500, #E1E1E1);
+}
+
+.allinfo_section_position{
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
 }
