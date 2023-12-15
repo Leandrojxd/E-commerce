@@ -6,18 +6,20 @@ type Props = {
     width:number,
     height:number,
     className?: string,
+    classNameContainerImage?: string,
 }
 
-function CustomImage({src, alt, width, height, className}: Props) 
+function CustomImage({src, alt, width, height, className,classNameContainerImage}: Props) 
 {
     return(
-        <div>
+        <div className={classNameContainerImage}>
             {src && alt && (
             <Image
                 src={src}
                 alt={alt}
                 width={width}
                 height={height}
+                className={className}
             />
             )}
         </div>
