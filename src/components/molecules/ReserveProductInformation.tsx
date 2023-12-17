@@ -10,7 +10,7 @@ function ReserveProductInformation() {
           
         <div className={styles.info_reserve_position}>
             <p className={styles.brand_card}>INEGAR</p>
-            <p className={styles.description_card}>$us 25.00</p>
+            <p className={styles.description_card}>$us 26.00</p>
         </div>
     </div>
   )
