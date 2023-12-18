@@ -701,5 +701,33 @@
 }
 
 .booking_form_style{
+    margin-top: 1rem;
+    width: 23rem;
+    display: flex;
+    flex-direction: column;
     margin-bottom: 5rem;
+}
+
+.description_form_style{
+    color: var(--primary-70, #101010);
+    text-align: center;
+    
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.title_form_style{
+    color: var(--primary-70, #101010);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-family: 'Poppins',sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
