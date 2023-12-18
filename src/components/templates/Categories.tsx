@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import CategoryItem from '../molecules/CategoryItem';
 import styles from 'public/home.module.css';
 import supabase from '@/pages/api/supabase';
@@ -22,7 +22,7 @@ function Categories() {
           throw error;
         }
 
-        if (data) {
+        if (data) { 
           setCategories(data);
         }
       } catch (error) {

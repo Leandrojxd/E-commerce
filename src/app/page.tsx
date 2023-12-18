@@ -1,12 +1,14 @@
 import Categories from "@/components/templates/Categories";
 import Header from "@/components/templates/Header";
-import Products from "@/components/templates/Products";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <main>
-      <Header/>
-      <Categories/>
+      <Header />
+      <Suspense fallback={<p>Loading...</p>}>
+        <Categories />
+      </Suspense>
     </main>
-  )
+  );
 }
