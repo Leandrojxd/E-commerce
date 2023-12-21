@@ -2,7 +2,7 @@ import TopHeaderCategoryProducts from '@/components/organism/TopHeaderCategoryPr
 import BookingForm from '@/components/templates/BookingForm'
 import ReserveProducts from '@/components/templates/ReserveProducts'
 import ShoppingBagFooter from '@/components/templates/ShoppingBagFooter'
-import React from 'react'
+import React, { Suspense } from 'react'
 
 export default function ShoppingCart() {
   return (
