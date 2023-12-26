@@ -2,13 +2,13 @@ import Categories from "@/components/templates/Categories";
 import Header from "@/components/templates/Header";
 import { Suspense } from "react";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <main>
-      <Header />
-      <Suspense fallback={"Loading..."}>
-        <Categories />
-      </Suspense>
-    </main>
+      <main>
+          <Suspense fallback="Loading from suspense">
+            <Header />
+            <Categories />
+          </Suspense>
+      </main>
   );
 }

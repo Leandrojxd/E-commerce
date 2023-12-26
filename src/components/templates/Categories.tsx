@@ -1,18 +1,9 @@
-"use client";
-
-import React, { Suspense, useEffect, useState } from "react";
 import CategoryItem from "../molecules/CategoryItem";
 import styles from "public/home.module.css";
 import { CategoriesData, getAllCategories } from "@/pages/api/Services";
 
 async function Categories() {
-  const [categories, setCategories] = useState<CategoriesData[]>([]);
-  useEffect(() => {
-    async function settingData() {
-      setCategories(await getAllCategories())
-    }
-    settingData();
-  }, []);
+  const categories: CategoriesData[] = await getAllCategories();
 
   return (
     <div className={styles.categories}>

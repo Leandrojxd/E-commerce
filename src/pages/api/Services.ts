@@ -1,5 +1,6 @@
 import supabase from "@/pages/api/supabase";
-type CategoriesData = {
+
+export type CategoriesData = {
   Name: string;
   Description: string;
 };
@@ -16,3 +17,17 @@ export const getAllCategories = async (): Promise<CategoriesData[]> => {
     return [];
   }
 };
+
+export const getImageByName = async (BucketName:string,RouteName:string):Promise<string> => {
+  try{
+    const {data,error} =  await supabase.storage.from(BucketName).download(RouteName)
+    if(error){
+      throw error;
+    }
+    const url = URL.createObjectURL(data);
+    return url;
+  }catch(error){
+    console.log("Error Image Bucket: ",error)
+    return "";
+  }
+}
