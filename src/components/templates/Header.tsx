@@ -5,21 +5,22 @@ import styles from "public/home.module.css";
 import { getImageByName } from "@/pages/api/Services";
 
 async function Header() {
-  const imgPromo2: Blob[] = await getImageByName("OtherAssets", "Promo.png");
-  console.log(imgPromo2);
+  const imageBlob = await getImageByName('OtherAssets', 'Promo.png');
+  console.log("From server side:",imageBlob)
 
   return (
-    <div className={styles.Header}>
+    <div className={styles.Header}>  
       <TopBarHeader />
-      {imgPromo2.map((blob: any) => (
+      {imageBlob ? (
         <CustomImage
-          src={URL.createObjectURL(blob)}
+          src={imageBlob}
           alt="Promo.png"
-          width={348}
-          height={146}
-          className={styles.promo_style}
+          width={300}
+          height={200}
         />
-      ))}
+      ) : (
+        <p>Cargando imagen...</p>
+      )}
       <Search />
     </div>
   );

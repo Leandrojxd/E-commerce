@@ -18,18 +18,27 @@ export const getAllCategories = async (): Promise<CategoriesData[]> => {
   }
 };
 
-export const getImageByName = async (BucketName: string, RouteName: string): Promise<Blob[]> => {
+function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+export const getImageByName = async (
+  BucketName: string,
+  RouteName: string
+): Promise<string> => {
   try {
-    const { data, error } = await supabase.storage.from(BucketName).download(RouteName);
+    await sleep(1000)
+    const { data, error } = await supabase.storage
+      .from(BucketName)
+      .download(RouteName);
     if (error) {
       throw error;
     }
     
-    const blobsArray = Array.isArray(data) ? data : [data];
-    
-    return blobsArray;
+    return URL.createObjectURL(data);
   } catch (error) {
     console.log("Error Image Bucket: ", error);
-    return []; // Devolvemos un array vacío en caso de error
+    return "";
   }
 };
+
