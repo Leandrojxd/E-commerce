@@ -1,13 +1,15 @@
 import supabase from "@/pages/api/supabase";
+import { CategoriesData } from "./DataType";
+import { Product } from "./DataType";
 
-export type CategoriesData = {
-  Name: string;
-  Description: string;
-};
+type CategoryInformation = {
+  Name:string,
+  Description:string,
+}
 
 export const getAllCategories = async (): Promise<CategoriesData[]> => {
   try {
-    const { data, error } = await supabase.from("Category").select("*");
+    const { data , error } = await supabase.from("Category").select("*");
     if (error) {
       throw error;
     }
@@ -28,14 +30,10 @@ export const getImageByName = async (
 ): Promise<string> => {
   try {
     await sleep(1000)
-    const { data, error } = await supabase.storage
+    const { data } = supabase.storage
       .from(BucketName)
-      .download(RouteName);
-    if (error) {
-      throw error;
-    }
-    
-    return URL.createObjectURL(data);
+      .getPublicUrl(RouteName)
+    return data.publicUrl;
   } catch (error) {
     console.log("Error Image Bucket: ", error);
     return "";
