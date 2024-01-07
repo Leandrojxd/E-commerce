@@ -6,8 +6,7 @@ import { getImageByName } from "@/pages/api/Services";
 
 async function Header() {
   
-  const imageBlob = await getImageByName("OtherAssets", "Promo.png");
-  console.log("From server side:", imageBlob);
+  const imageBlob =  getImageByName("OtherAssets", "Promo.png");
 
   return (
     <div className={styles.Header}>

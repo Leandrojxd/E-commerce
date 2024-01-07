@@ -6,8 +6,12 @@ type CategoryInformation = {
   Name:string,
   Description:string,
 }
+function sleep(ms: number): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 export const getAllCategories = async (): Promise<CategoriesData[]> => {
+  await sleep(4000)
   try {
     const { data , error } = await supabase.from("Category").select("*");
     if (error) {
@@ -20,16 +24,11 @@ export const getAllCategories = async (): Promise<CategoriesData[]> => {
   }
 };
 
-function sleep(ms: number): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-export const getImageByName = async (
+export const getImageByName =   (
   BucketName: string,
   RouteName: string
-): Promise<string> => {
+): string => {
   try {
-    await sleep(1000)
     const { data } = supabase.storage
       .from(BucketName)
       .getPublicUrl(RouteName)

@@ -5,8 +5,8 @@ import { CategoriesData } from "@/pages/api/DataType";
 
 async function Categories() {
   const categories: CategoriesData[] = await getAllCategories();
-  const imageCategory = await getImageByName("ProductsImage","Categories/CategoryImg.png")
-  console.log(imageCategory)
+  const imageCategory = getImageByName("ProductsImage","Categories/CategoryImg.png")
+  
   return (
     <div className={styles.categories}>
       <h1 className={styles.title_style}>CATEGORIAS</h1>
