@@ -731,3 +731,19 @@
     font-weight: 700;
     line-height: normal;
 }
+.category_title_loading{
+    width: 10rem;
+    height: 1.5rem;
+    margin-top: 0.9rem;
+    gap: 9px;
+    border-radius: 8px;
+    background-color: lightgray;
+}
+.category_loading{
+    width: 22.7rem;
+    height: 3rem;
+    margin-top: 0.9rem;
+    gap: 9px;
+    border-radius: 8px;
+    background-color: lightgray;
+}   
