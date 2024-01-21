@@ -7,6 +7,7 @@ function sleep(ms: number): Promise<void> {
 
 export const getAllCategories = async (): Promise<CategoriesData[]> => {
   try {
+    await sleep(6000)
     const { data, error } = await supabase.from("Category").select("*");
     if (error) {
       throw error;

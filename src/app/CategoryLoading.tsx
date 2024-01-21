@@ -1,6 +1,6 @@
 import styles from "public/home.module.css";
 
-export default function Loading() {
+export default function CategoryLoading() {
   return (
     <div className={styles.loading}>
       <div className={styles.category_title_loading}/>

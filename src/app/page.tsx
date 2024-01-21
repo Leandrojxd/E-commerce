@@ -1,15 +1,14 @@
 import Categories from "@/components/templates/Categories";
 import Header from "@/components/templates/Header";
-import { Suspense } from "react";
-import Loading from "./loading";
+import { SkeletonTheme } from "react-loading-skeleton";
 
 export default async function Home() {
   return (
     <main>
       <Header />
-      <Suspense fallback={<Loading/>}>
+      <SkeletonTheme baseColor="#202020" highlightColor="#444">
         <Categories />
-      </Suspense>
+      </SkeletonTheme>
     </main>
   );
 }
