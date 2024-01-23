@@ -1,18 +1,40 @@
+"use client";
+
 import TopBarHeader from "../organism/TopBarHeader";
 import CustomImage from "../atoms/CustomImage";
 import Search from "../organism/Search";
 import styles from "public/home.module.css";
 import { ImageAssets } from "@/pages/api/DataType";
 import { getImageByName } from "@/pages/api/Services";
+import { useEffect, useState } from "react";
+import ImageLoading from "@/app/SkeletonLoading/ImageLoading";
 
-async function Header() {
-  
-  const UrlImage:ImageAssets = await getImageByName("Promo");
-  
+function Header() {
+  const [loading, setLoading] = useState(true);
+  const [urlImage, setUrlImage] = useState<ImageAssets>();
+
+  useEffect(() => {
+    const fetchImage = async () => {
+      const urlImage = await getImageByName("Promo");
+      setUrlImage(urlImage);
+      setLoading(false);
+    };
+    fetchImage();
+  }, []);
+
   return (
     <div className={styles.Header}>
       <TopBarHeader />
-      <CustomImage src={UrlImage.Url_Image} alt={UrlImage.Name} width={300} height={200} />
+      {loading ? (
+        <ImageLoading />
+      ) : (
+        <CustomImage
+          src={urlImage?.Url_Image as string}
+          alt={urlImage?.Name as string}
+          width={300}
+          height={200}
+        />
+      )}
       <Search />
     </div>
   );
