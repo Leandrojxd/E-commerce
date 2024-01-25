@@ -1,17 +1,19 @@
 import supabase from "@/pages/api/supabase";
-import { CategoriesData, ImageAssets } from "./DataType";
+import { CategoriesData, ImageAssets, ProductsData } from "./DataType";
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-export const getAllCategories = async (): Promise<CategoriesData[]> => {
+export const getAllByNameOfTable = async (
+  NameTableData: string
+): Promise<CategoriesData[] | ProductsData[]> => {
   try {
-    const { data, error } = await supabase.from("Category").select("*");
+    const { data, error } = await supabase.from(NameTableData).select("*");
     if (error) {
       throw error;
     }
-    return data as CategoriesData[];
+    return data;
   } catch (error) {
     console.error("Error fetching categories:", error);
     return [];
@@ -30,4 +32,20 @@ export const getImageByName = async (
     console.log("Error getting the Image", error);
   }
   return data as ImageAssets;
+};
+
+export const fetchDataByQuery = async (searchQuery: string):Promise<ProductsData[]> => {
+  try {
+    const { data, error } = await supabase.from("Products")
+    .select("*")
+    .textSearch("Name",searchQuery);
+    
+    if (error) {
+      throw error;
+    }
+    return data as ProductsData[];
+  } catch (error) {
+    console.error("Error getting the data byQuery:", error);
+    return [];
+  }
 };

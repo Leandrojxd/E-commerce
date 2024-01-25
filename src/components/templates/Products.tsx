@@ -4,39 +4,19 @@ import React, { useEffect, useState } from 'react'
 import styles from 'public/home.module.css'
 import ProductCard from '../organism/ProductCard'
 import supabase from '@/pages/api/supabase'
+import { getAllByNameOfTable } from '@/pages/api/Services'
+import { ProductsData } from '@/pages/api/DataType'
 
-function Products() {
-  
-  const[products,setProducts] = useState<any[]>([])
+type ProductsProps = {
+  productsData:ProductsData[]
+}
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
 
-        if (!supabase) {
-          throw new Error('Supabase client is null');
-        }
-
-        const { data, error } = await supabase.from('Products').select('*');
-
-        if (error) {
-          throw error;
-        }
-
-        if (data) {
-          setProducts(data);
-        }
-      } catch (error) {
-        console.error('Error fetching categories:', error);
-      }
-    }
-    fetchProducts();
-  });
-  
+function Products({productsData}:ProductsProps) {
   return (
     <div>
       <p className={styles.title_style} >Productos</p>
-      {products.map((product:any, index:number)=>(
+      {productsData.map((product:ProductsData, index:number)=>(
         <ProductCard 
         key={index}
         title={product.Name} 
@@ -46,7 +26,6 @@ function Products() {
         product_id={product.Product_id}
         />
       ))}
-      
     </div>
   )
 }

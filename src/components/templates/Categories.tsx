@@ -2,7 +2,7 @@
 
 import CategoryItem from "../molecules/CategoryItem";
 import styles from "public/home.module.css";
-import { getAllCategories } from "@/pages/api/Services";
+import { getAllByNameOfTable } from "@/pages/api/Services";
 import { CategoriesData } from "@/pages/api/DataType";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useEffect, useState } from "react";
@@ -15,8 +15,8 @@ function Categories() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const categoriesData = await getAllCategories();
-        setCategories(categoriesData);
+        const categoriesData = await getAllByNameOfTable("Category");
+        setCategories(categoriesData as CategoriesData[]);
       } catch (error) {
         console.error("Error fetching categories:", error);
       } finally {
