@@ -12,13 +12,14 @@ type ProductsProps = {
 
 function Products({ productsDataByQuery = [] }: ProductsProps) {
   const [productsData,setProductsData] = useState<ProductsData[]>([])
-
+  const [loading, setLoading] = useState(true)
   useEffect(() => {
     const getDataProducts = async () => {
       const data = productsDataByQuery.length === 0 ? 
       ((await getAllByNameOfTable("Products")) as ProductsData[])
           : productsDataByQuery;
       setProductsData(data);
+      setLoading(true);
       };
     getDataProducts();
   });
@@ -26,7 +27,7 @@ function Products({ productsDataByQuery = [] }: ProductsProps) {
   return (
     <div>
       <p className={styles.title_style}>Productos</p>
-      {productsData.map((product: ProductsData, index: number) => (
+      {loading? <>Loading Products</> : productsData.map((product: ProductsData, index: number) => (
         <ProductCard
           key={index}
           title={product.Name}
