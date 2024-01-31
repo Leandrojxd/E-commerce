@@ -747,3 +747,12 @@
     border-radius: 8px;
     background-color: lightgray;
 }   
+
+.product_loading{
+    width: 22.7rem;
+    height: 10.5rem;
+    margin-top: 0.9rem;
+    gap: 9px;
+    border-radius: 8px;
+    background-color: lightgray;
+}

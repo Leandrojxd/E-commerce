@@ -5,6 +5,7 @@ import ProductCard from "../organism/ProductCard";
 import { ProductsData } from "@/pages/api/DataType";
 import { getAllByNameOfTable } from "@/pages/api/Services";
 import { useEffect, useState } from "react";
+import ProductsLoading from "@/app/SkeletonLoading/ProductsLoading";
 
 type ProductsProps = {
   productsDataByQuery?: ProductsData[];
@@ -19,7 +20,7 @@ function Products({ productsDataByQuery = [] }: ProductsProps) {
       ((await getAllByNameOfTable("Products")) as ProductsData[])
           : productsDataByQuery;
       setProductsData(data);
-      setLoading(true);
+      setLoading(false);
       };
     getDataProducts();
   });
@@ -27,7 +28,7 @@ function Products({ productsDataByQuery = [] }: ProductsProps) {
   return (
     <div>
       <p className={styles.title_style}>Productos</p>
-      {loading? <>Loading Products</> : productsData.map((product: ProductsData, index: number) => (
+      {loading? <ProductsLoading/> : productsData.map((product: ProductsData, index: number) => (
         <ProductCard
           key={index}
           title={product.Name}

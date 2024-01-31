@@ -1,5 +1,5 @@
 import supabase from "@/pages/api/supabase";
-import { CategoriesData, ImageAssets, ProductsData } from "./DataType";
+import { CategoriesData, ImageAssets, ProductsData, SingleProductInfo } from "./DataType";
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -48,4 +48,16 @@ export const fetchDataByQuery = async (searchQuery: string):Promise<ProductsData
     console.error("Error getting the data byQuery:", error);
     return [];
   }
+};
+
+export const serviceFetchSingleProductById = async (Product_id: string):Promise<SingleProductInfo> => {
+    const { data, error } = await supabase
+      .from('Products')
+      .select('*')
+      .eq('Product_id', Product_id)
+      .single();
+    if (error) {
+      console.log("Error un single product Service")
+    }
+    return data as SingleProductInfo
 };

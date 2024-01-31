@@ -17,3 +17,10 @@ export interface ProductsData {
     Price:string,
     Product_id:string,
 }
+
+export type SingleProductInfo = {
+    Name:string,
+    Brand:string,
+    Price:string,
+    Description:string,
+}

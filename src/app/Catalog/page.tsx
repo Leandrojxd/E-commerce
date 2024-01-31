@@ -34,9 +34,7 @@ export default function Catalog() {
     <main className={styles.catalog_page_style}>
       <FilterSearchBar />
       <Categories />
-      {loading ? 
-      <>Loading</> : 
-      <Products productsDataByQuery={products} />}
+      <Products productsDataByQuery={products} />
     </main>
   );
 }
