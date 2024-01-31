@@ -1,9 +1,5 @@
 "use client";
 
-import DescriptionSingleProduct from "@/components/molecules/DescriptionSingleProduct";
-import SingleProductHeader from "@/components/molecules/SingleProductHeader";
-import SingleProductImage from "@/components/molecules/SingleProductImage";
-import FooterSingleProduct from "@/components/organism/FooterSingleProduct";
 import SingleProduct from "@/components/organism/SingleProduct";
 import { SingleProductInfo } from "@/pages/api/DataType";
 import { serviceFetchSingleProductById } from "@/pages/api/Services";
