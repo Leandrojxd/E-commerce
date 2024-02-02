@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "public/home.module.css";
 import CustomImage from "../atoms/CustomImage";
 import PlusMinusProduct from "../molecules/PlusMinusProduct";
@@ -6,6 +6,7 @@ import TotalSection from "../molecules/TotalSection";
 import { useEffect, useState } from "react";
 import { serviceFetchSingleProductById } from "@/pages/api/Services";
 import { SingleProductInfo } from "@/pages/api/DataType";
+import { useShoppingCartContext } from "@/pages/api/DataContext";
 
 function SingleProduct({ product_id }: { product_id: string }) {
   const [singleProduct, setSingleProduct] = useState<SingleProductInfo>();
@@ -14,6 +15,7 @@ function SingleProduct({ product_id }: { product_id: string }) {
   const handlerQuantityChange = (newQuantity: number) => {
     setTotalQuantity(newQuantity);
   };
+  const { setCurrentProduct } = useShoppingCartContext();
   useEffect(() => {
     const fetchSingleProductById = async (Product_id: string) => {
       const singleProductSupabase = await serviceFetchSingleProductById(
@@ -24,6 +26,15 @@ function SingleProduct({ product_id }: { product_id: string }) {
     };
     fetchSingleProductById(product_id);
   }, [product_id]);
+
+  useEffect(() => {
+    setCurrentProduct({
+      productName: singleProduct?.Name as string,
+      productBrand: singleProduct?.Brand as string,
+      productPrice: singleProduct?.Price as string,
+    });
+  }, [singleProduct]);
+
   return (
     <div>
       <div>

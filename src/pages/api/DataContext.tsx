@@ -6,45 +6,74 @@ interface ContextPropsReactNode {
   children: ReactNode;
 }
 
-interface PriceContextValue {
-  productData: {
-    productName: string;
-    productBrand: string;
-    productPrice: string | null;
-    productQuantity: string;
-  };
-  setProductData: (newData: Partial<PriceContextValue["productData"]>) => void;
+interface ReserveProduct {
+  productName: string;
+  productBrand: string;
+  productPrice: string | null;
+  productQuantity: string;
 }
 
-const defaultProductData: PriceContextValue["productData"] = {
+interface IContextValue {
+  shoppingCartReserveProducts: ReserveProduct[];
+  currentProduct: ReserveProduct,
+  setCurrentProduct:(currentProduct: Partial<ReserveProduct>)=>void,
+  addReserveProduct: (newData: Partial<ReserveProduct>) => void;
+}
+
+const defaultProductData: ReserveProduct[] = [];
+
+const defaultReserveProduct:ReserveProduct = {
   productName: "",
   productBrand: "",
-  productPrice: null,
+  productPrice: "",
   productQuantity: "",
-};
+}
 
-const priceContext = createContext<PriceContextValue>({
-  productData: defaultProductData,
-  setProductData: () => {},
+const shoppingCartContext = createContext<IContextValue>({
+  shoppingCartReserveProducts: defaultProductData,
+  currentProduct: defaultReserveProduct,
+  setCurrentProduct:()=>{},
+  addReserveProduct: () => {},
 });
 
-export const PriceContextProvider: React.FC<ContextPropsReactNode> = ({ children }) => {
-  const [productData, setProductData] = useState<PriceContextValue["productData"]>(defaultProductData);
+export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ children }) => {
+  const [shoppingCartReserveProducts, setShoppingCartReserveProducts] = useState<ReserveProduct[]>(defaultProductData);
+  const [currentProductInPage,setCurrentProductInPage] = useState<ReserveProduct>(defaultReserveProduct);
 
-  const updateProductData = (newData: Partial<PriceContextValue["productData"]>) => {
-    setProductData((prevData) => ({ ...prevData, ...newData }));
+  const setCurrentSingleProduct = (newCurrentProduct: Partial<ReserveProduct>) => {
+    if(currentProductInPage){
+      setCurrentProductInPage(newCurrentProduct as ReserveProduct)
+    }
+  }
+
+  const updateProductData = (newData: Partial<ReserveProduct>) => {
+    setShoppingCartReserveProducts((prevData) => {
+      const updatedData = [...prevData];
+      const existingProductIndex = updatedData.findIndex(
+        (product) => product.productName === newData.productName && product.productBrand === newData.productBrand
+      );
+
+      if (existingProductIndex !== -1) {
+        updatedData[existingProductIndex].productQuantity = newData.productQuantity as string;
+      } else {
+        updatedData.push(newData as ReserveProduct);
+      }
+      return updatedData;
+    });
   };
 
-  const contextValue: PriceContextValue = {
-    productData,
-    setProductData: updateProductData,
+  const contextValue: IContextValue = {
+    shoppingCartReserveProducts: shoppingCartReserveProducts,
+    currentProduct:currentProductInPage,
+    setCurrentProduct: setCurrentSingleProduct,
+    addReserveProduct: updateProductData,
   };
 
-  return <priceContext.Provider value={contextValue}>{children}</priceContext.Provider>;
+  return <shoppingCartContext.Provider value={contextValue}>{children}</shoppingCartContext.Provider>;
 };
 
-export const usePriceContext = (): PriceContextValue => {
-  const context = useContext(priceContext);
+export const useShoppingCartContext = (): IContextValue => {
+  const context = useContext(shoppingCartContext);
   if (!context) {
     throw new Error("Debe ser utilizado con el Price Provider");
   }

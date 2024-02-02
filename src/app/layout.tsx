@@ -1,4 +1,4 @@
-import { PriceContextProvider } from "@/pages/api/DataContext";
+import { ShoppingCartContextProvider } from "@/pages/api/DataContext";
 import "./global.css";
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
       <head />
 
       <body>
-        <PriceContextProvider>{children}</PriceContextProvider>
+        <ShoppingCartContextProvider>{children}</ShoppingCartContextProvider>
       </body>
     </html>
   );
