@@ -1,758 +1,777 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Outfit:wght@100;200;300;400;700;800&family=Poppins:wght@400;500;700&display=swap');
-
-
-
-.cellphone{
-    display: inline-flex;
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    gap: 0.625px;
-    border-radius: 8px;
-    border: 1px solid var(--neutral-500, #E1E1E1);
-    background: var(--neutral-100, #FCFEFF); 
-    height:fit-content;
-}
-.cellphone_text{
-    color: var(--dark, #030303);
-    font-family: 'Outfit', sans-serif;
-    font-weight: 400;
-    font-size: 1rem;
-    font-style: normal;
-    margin: 0;
-}
-
-.topBarHeader{
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.style_header_text{
-    color: #101010;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.4rem;
-    font-style: normal;
-    font-weight: 900;
-    line-height: normal;
-}
-
-.logo_style{
-    width: 2.8rem;
-    height: 3.25rem;
-}
-.promo_style{
-    width: 23.2rem;
-    height: 9.12rem;   
-}   
-.itemImg_style{
-    width: 2.8;
-    height: 2.8;
-    flex-shrink: 0;
-}
-.search_style{
-    width: 1.41rem;
-    height: 1.41rem;
-}
-.search_image_position{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.title_style{
-    color: var(--primary-70, #101010);
-    font-family: 'Outfit', sans-serif;
-    font-size: 18.841px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    text-transform: uppercase;
-}
-.searchBar_style{
-    height: 2rem;
-    width: auto;
-
-    margin: 1.6rem 0rem;
-    padding: 0.57rem 0.94rem;
-
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-
-
-    border-radius: 7.536px;
-    border: 4px solid var(--neutral-500, #E1E1E1);
-    background: var(--neutral-100, #FCFEFF);
-}
-
-.searchInput_style{
-    color: var(--dark, #030303);
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    border: none;
-    outline: none;
-}
-.logoName_styleFlex{
-    display: flex;
-    flex-direction: row;
-}
-
-.categoryItem{
-    display: flex;
-    width: 20.5rem;
-    padding: 0rem 1.25rem;
-    margin-top: 0.9rem;
-    align-items: center;
-    gap: 9px;
-    border-radius: 8px;
-    border: 1px solid var(--neutral-500, #E1E1E1);
-}
-
-.category_string_style_title{
-    color: var(--dark, #030303);
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.category_string_style_subtitle{
-    color: var(--dark, #030303);
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.title_text_style{
-    color: var(--dark, #030303);
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.description_text_style{
-    color: var(--dark, #030303);
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.sort_button_style{
-    width: 3.6rem;
-    height: 3.7rem;
-    border-radius: 7.536px;
-    border: 4px solid var(--neutral-500, #E1E1E1);
-    background: var(--neutral-100, #FCFEFF);
-}
-
-.title_card{
-    color: var(--dark, #030303);
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    letter-spacing: -0.32px;
-    margin: 0;
-}
-
-.brand_card{
-    color: var(--neutral-700, #777B8A);
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin: 0;
-}
-
-.description_card{
-    color: var(--dark, #030303);
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0;
-    width:8rem;
-}
-
-.price_card{
-    color: var(--primary, #4187F7);
-    font-family: 'Outfit', sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    margin: 0;
-    margin-top: 20px;
-}
-
-.product_description_style{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-}
-
-.product_card_style{
-    display: flex;
-    width: 346px;
-    padding: 20px 0px;
-    justify-content: space-between;
-    align-items: center;
-
-    border-bottom: 1px solid var(--neutral-500, #E1E1E1);
-}
-
-.product_card_img{
-    width: 165px;
-    height: 166px;
-    flex-shrink: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 8px;
-    background: var(--neutral-300, #F7F7F7);
-}
-
-.catalog_page_style{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.sort_icon_style{
-    width: 1.5rem;
-    height: 1.5rem;
-    flex-shrink: 0;
-}
-
-.filter_search_bar_position{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-}
-.no_results_style{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 17.125rem;
-
-    margin-top: 17.26rem;
-}
-.no_results_text_style{
-    color: var(--primary-70, #101010);
-    text-align: center;
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.back_button_style_error{
-    display: flex;
-    width: 8.56rem;
-    height: 40px;
-    padding: 10px 0;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-
-    border-radius: 8px;
-    background: var(--primary, #4187F7);
-}
-
-.back_button_text_style{
-    color: var(--neutral-100, #FCFEFF);
-    text-align: center;
-    font-family: 'Outfit', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 900;
-    line-height: 19.8px;
-    letter-spacing: 0.3px;
-    
-    display: flex;
-    align-items: center;
-    margin: 0;
-}
-
-.error_message_text_style{
-    width: 13rem;
-    margin: 1.81rem 0rem;
-
-    color: var(--primary-70, #101010);
-    text-align: center;
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.error_message_position{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    margin-top: 5.5rem;
-}
-
-.button_shopping_cart_empty_style{
-    display: flex;
-    width: auto;
-    height: 40px;
-    padding: 10px 20px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    margin: 0;
-
-
-    border-radius: 8px;
-    background: var(--primary, #4187F7);
-}
-
-.empty_message_text_style{
-
-    width: 197px;
-
-    color: var(--primary-70, #101010);
-    text-align: center;
-    font-family: 'Outfit',sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.empty_shopping_cart_position{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 14rem;
-}
-
-.button_style2{
-    border-radius: 8px;
-    border: 1px solid var(--neutral-500, #E1E1E1);
-    background: var(--neutral-100, #FCFEFF);
-    padding: 0.6rem 1rem;
-}
-
-.button_text_style2{
-    color: var(--dark, #030303);
-    text-align: center;
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin: 0;
-}
-
-.outfit_style_text_800{
-    color: #101010;
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: normal;
-    text-transform: uppercase;
-
-    margin: 0;
-}
-
-.header_category_products_position{
-    display: flex;
-    gap: 0.8rem;
-    align-items: center;
-    
-    margin-left: 0.9rem;
-}
-.category_products_position{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.button_style3{
-    width: auto;
-    padding: 0;
-    height: fit-content;
-
-    border-radius: 8px;
-    background: var(--dark, #030303);
-}
-
-.text_style_white{
-    color: var(--neutral-100, #FCFEFF);
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    
-    margin: 0;
-}
-.button_style3_position{
-    display: flex;
-
-    padding: 0.75rem 20px;
-    justify-content: center;
-    align-items: center;
-    gap: 13px;
-}
-.text_style_white5{
-    color: var(--neutral-100, #FCFEFF);
-    
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-
-    margin: 0;
-}
-
-.text_style_white7_heading{
-    color: var(--neutral-100, #FCFEFF);
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-
-    margin: 0;
-}
-
-.state_shopping_bag_footer_position{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem 1rem ;
-}
-
-.shopping_bag_footer_style{
-    height: auto;
-    width: 27.6rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6rem;
-
-    position: fixed;
-    left: -0.8rem;
-    bottom: 0;
-    background: var(--primary, #4187F7);
-}
-.single_product_image_container_style{
-    display: flex;
-    width: 390px;
-    height: 201px;
-    padding: 20px 0px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Outfit:wght@100;200;300;400;700;800&family=Poppins:wght@400;500;700&display=swap");
+
+.cellphone {
+  display: inline-flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625px;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-500, #e1e1e1);
+  background: var(--neutral-100, #fcfeff);
+  height: fit-content;
+}
+.cellphone_text {
+  color: var(--dark, #030303);
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  font-style: normal;
+  margin: 0;
+}
+
+.topBarHeader {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.style_header_text {
+  color: #101010;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: normal;
+}
+
+.logo_style {
+  width: 2.8rem;
+  height: 3.25rem;
+}
+.promo_style {
+  width: 23.2rem;
+  height: 9.12rem;
+}
+.itemImg_style {
+  width: 2.8;
+  height: 2.8;
+  flex-shrink: 0;
+}
+.search_style {
+  width: 1.41rem;
+  height: 1.41rem;
+}
+.search_image_position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title_style {
+  color: var(--primary-70, #101010);
+  font-family: "Outfit", sans-serif;
+  font-size: 18.841px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+}
+.searchBar_style {
+  height: 2rem;
+  width: auto;
+
+  margin: 1.6rem 0rem;
+  padding: 0.57rem 0.94rem;
+
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  border-radius: 7.536px;
+  border: 4px solid var(--neutral-500, #e1e1e1);
+  background: var(--neutral-100, #fcfeff);
+}
+
+.searchInput_style {
+  color: var(--dark, #030303);
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  outline: none;
+}
+.logoName_styleFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+.categoryItem {
+  display: flex;
+  width: 20.5rem;
+  padding: 0rem 1.25rem;
+  margin-top: 0.9rem;
+  align-items: center;
+  gap: 9px;
+  border-radius: 8px;
+  border: 1px solid var(--neutral-500, #e1e1e1);
+}
+
+.category_string_style_title {
+  color: var(--dark, #030303);
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.category_string_style_subtitle {
+  color: var(--dark, #030303);
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.title_text_style {
+  color: var(--dark, #030303);
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.description_text_style {
+  color: var(--dark, #030303);
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.sort_button_style {
+  width: 3.6rem;
+  height: 3.7rem;
+  border-radius: 7.536px;
+  border: 4px solid var(--neutral-500, #e1e1e1);
+  background: var(--neutral-100, #fcfeff);
+}
+
+.title_card {
+  color: var(--dark, #030303);
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.32px;
+  margin: 0;
+}
+
+.brand_card {
+  color: var(--neutral-700, #777b8a);
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.description_card {
+  color: var(--dark, #030303);
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  width: 8rem;
+}
+
+.price_card {
+  color: var(--primary, #4187f7);
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin: 0;
+  margin-top: 20px;
+}
+
+.product_description_style {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.product_card_style {
+  display: flex;
+  width: 346px;
+  padding: 20px 0px;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid var(--neutral-500, #e1e1e1);
+}
+
+.product_card_img {
+  width: 165px;
+  height: 166px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  background: var(--neutral-300, #f7f7f7);
+}
+
+.catalog_page_style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sort_icon_style {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+
+.filter_search_bar_position {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.no_results_style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 17.125rem;
+
+  margin-top: 17.26rem;
+}
+.no_results_text_style {
+  color: var(--primary-70, #101010);
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.back_button_style_error {
+  display: flex;
+  width: 8.56rem;
+  height: 40px;
+  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+
+  border-radius: 8px;
+  background: var(--primary, #4187f7);
+}
+
+.back_button_text_style {
+  color: var(--neutral-100, #fcfeff);
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 19.8px;
+  letter-spacing: 0.3px;
+
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.error_message_text_style {
+  width: 13rem;
+  margin: 1.81rem 0rem;
+
+  color: var(--primary-70, #101010);
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.error_message_position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 5.5rem;
+}
+
+.button_shopping_cart_empty_style {
+  display: flex;
+  width: auto;
+  height: 40px;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  margin: 0;
+
+  border-radius: 8px;
+  background: var(--primary, #4187f7);
+}
+
+.empty_message_text_style {
+  width: 197px;
+
+  color: var(--primary-70, #101010);
+  text-align: center;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.empty_shopping_cart_position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 14rem;
+}
+
+.button_style2 {
+  border-radius: 8px;
+  border: 1px solid var(--neutral-500, #e1e1e1);
+  background: var(--neutral-100, #fcfeff);
+  padding: 0.6rem 1rem;
+}
+
+.button_text_style2 {
+  color: var(--dark, #030303);
+  text-align: center;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.outfit_style_text_800 {
+  color: #101010;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  text-transform: uppercase;
+
+  margin: 0;
+}
+
+.header_category_products_position {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+
+  margin-left: 0.9rem;
+}
+.category_products_position {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button_style3 {
+  width: auto;
+  padding: 0;
+  height: fit-content;
+
+  border-radius: 8px;
+  background: var(--dark, #030303);
+}
+
+.text_style_white {
+  color: var(--neutral-100, #fcfeff);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  margin: 0;
+}
+.button_style3_position {
+  display: flex;
+
+  padding: 0.75rem 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 13px;
+}
+.text_style_white5 {
+  color: var(--neutral-100, #fcfeff);
 
-    border-bottom: 1px solid var(--neutral-500, #E1E1E1);
-    background: var(--neutral-300, #F7F7F7);
-}
-
-.single_product_header_position{
-    margin-top: 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    justify-content: space-between;
-    gap: 2rem;
-}
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+
+  margin: 0;
+}
+
+.text_style_white7_heading {
+  color: var(--neutral-100, #fcfeff);
+
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  margin: 0;
+}
+
+.state_shopping_bag_footer_position {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 1rem;
+}
+
+.shopping_bag_footer_style {
+  height: auto;
+  width: 27.6rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6rem;
+
+  position: fixed;
+  left: -0.8rem;
+  bottom: 0;
+  background: var(--primary, #4187f7);
+}
+.single_product_image_container_style {
+  display: flex;
+  width: 390px;
+  height: 201px;
+  padding: 20px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+
+  border-bottom: 1px solid var(--neutral-500, #e1e1e1);
+  background: var(--neutral-300, #f7f7f7);
+}
+
+.single_product_header_position {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.description_single_product_style {
+  margin-top: 2rem;
+
+  color: var(--primary-70, #101010);
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.product_name_single_product_position {
+  width: 10rem;
+}
+
+.plusminus_button_text_style {
+  color: var(--primary, #4187f7);
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 
-.description_single_product_style{
-    margin-top: 2rem;
-
-    color: var(--primary-70, #101010);
-    font-family: 'Outfit', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  height: 1rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.product_name_single_product_position{
-    width: 10rem;
+.plusminus_button_text_position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.plusminus_button_style {
+  display: flex;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
 
-.plusminus_button_text_style{
-    color: var(--primary, #4187F7);
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  border: none;
+  border-radius: 50px;
+  background: var(--neutral-100, #fcfeff);
+}
 
-    height: 1rem;
+.plusminus_product_section {
+  display: flex;
+  width: 119px;
+  height: 3.43rem;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-shrink: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  border-radius: 8px;
+  background: var(--primary, #4187f7);
 }
+
+.plusminus_section_text_style {
+  color: var(--neutral-100, #fcfeff);
 
-.plusminus_button_text_position{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
 
+.text_style_button_white {
+  color: var(--neutral-100, #fcfeff);
 
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
+
+.total_section_style {
+  display: flex;
+  width: 11.05rem;
+  height: 3.43rem;
+  padding: 0.5rem 16px;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
 
-.plusminus_button_style{
-    display: flex;
-    width: 22px;
-    height: 22px;
-    padding: 0;
-    justify-content: center;
-    align-items: center;
+  border-radius: 8px;
+  background: var(--primary, #4187f7);
+}
 
-    border: none;
-    border-radius: 50px;
-    background: var(--neutral-100, #FCFEFF);
+.agregate_style_button {
+  border: none;
+  border-radius: 8px;
+  background: var(--primary, #4187f7);
 }
 
-.plusminus_product_section{
-    display: flex;
-    width: 119px;
-    height: 3.43rem;
-    padding: 0.5rem;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    flex-shrink: 0;
+.footer_single_product_position {
+  display: flex;
+  gap: 1rem;
+}
 
-    border-radius: 8px;
-    background: var(--primary, #4187F7);
+.back_products_button_position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.plusminus_section_text_style{
-    color: var(--neutral-100, #FCFEFF);
+.booking_product_image_style {
+  width: 82px;
+  height: 82.497px;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--neutral-300, #f7f7f7);
+}
 
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+.booking_product_img {
+  width: 55.453px;
+  height: 54.931px;
+  flex-shrink: 0;
 }
 
-.text_style_button_white{
-    color: var(--neutral-100, #FCFEFF);
+.booking_productcard_position {
+  display: flex;
+  width: 346px;
+  padding: 20px 0px;
+  align-items: center;
+  gap: 44px;
 
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+  border-bottom: 1px solid var(--neutral-500, #e1e1e1);
 }
 
-.total_section_style{
-    display: flex;
-    width: 212px;
-    height: 3.43rem;
-    padding: 0.5rem 16px;
-    justify-content: space-between;
-    align-items: center;
-    flex-shrink: 0;
+.link_style {
+  text-decoration: none;
+}
+.info_reserve_position {
+  display: flex;
+  gap: 7rem;
+}
+
+.plusminus_reserve_section {
+  display: flex;
+  width: 220px;
+  height: 2.7rem;
+  justify-content: center;
+  align-items: center;
+  gap: 29px;
 
-    border-radius: 8px;
-    background: var(--primary, #4187F7);
+  border-radius: 0.5rem;
+  background: var(--neutral-500, #e1e1e1);
 }
 
-.agregate_style_button{
-    border: none;
-    border-radius: 8px;
-    background: var(--primary, #4187F7);
+.allinfo_section_position {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-.footer_single_product_position{
-    display:flex;
-    gap: 1rem;
+.reserve_product_title {
+  width: 12rem;
 }
+
+.input_style {
+  display: flex;
+  width: 346.667px;
+  padding: 15.072px 9.42px;
+  align-items: center;
+  gap: 9.42px;
+
+  border-radius: 7.536px;
+  border: 4px solid var(--neutral-500, #e1e1e1);
+  background: var(--neutral-100, #fcfeff);
+}
+
+.subtitle_style {
+  color: var(--secondary-40, #5f626b);
 
-.back_products_button_position{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
-.booking_product_image_style{
-    width: 82px;
-    height: 82.497px;
-    flex-shrink: 0;
+.title_style2 {
+  color: var(--primary-70, #101010);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 8px;
-    background: var(--neutral-300, #F7F7F7);
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
-.booking_product_img{
-    width: 55.453px;
-    height: 54.931px;
-    flex-shrink: 0;
+.booking_form_style {
+  margin-top: 1rem;
+  width: 23rem;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
 }
 
-.booking_productcard_position{
-    display: flex;
-    width: 346px;
-    padding: 20px 0px;
-    align-items: center;
-    gap: 44px;
+.description_form_style {
+  color: var(--primary-70, #101010);
+  text-align: center;
 
-    border-bottom: 1px solid var(--neutral-500, #E1E1E1);
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
-.link_style{
-    text-decoration: none;
+.title_form_style {
+  color: var(--primary-70, #101010);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+.category_title_loading {
+  width: 10rem;
+  height: 1.5rem;
+  margin-top: 0.9rem;
+  gap: 9px;
+  border-radius: 8px;
+  background-color: lightgray;
+}
+.category_loading {
+  width: 22.7rem;
+  height: 3rem;
+  margin-top: 0.9rem;
+  gap: 9px;
+  border-radius: 8px;
+  background-color: lightgray;
+}
+
+.product_loading {
+  width: 22.7rem;
+  height: 10.5rem;
+  margin-top: 0.9rem;
+  gap: 9px;
+  border-radius: 8px;
+  background-color: lightgray;
 }
-.info_reserve_position{
-    display: flex;
-    gap: 7rem;
+
+.button_exit_product_style {
+  margin-left: 20rem;
+  margin-bottom: 10rem;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  background-color: white;
+  border-radius: 100%;
+  border: none;
+  font-family: "Poppins", sans-serif;
+
+  text-align: center;
 }
+
+.text_style_button_exit {
+  color: var(--neutral-100, black);
 
-.plusminus_reserve_section{
-    display: flex;
-    width: 220px;
-    height: 2.7rem;
-    justify-content: center;
-    align-items: center;
-    gap: 29px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 
-    border-radius: 0.5rem;
-    background: var(--neutral-500, #E1E1E1);
-}
-
-.allinfo_section_position{
-    display: flex;
-    flex-direction: column;
-    gap: 0.6rem;
-}
-
-.reserve_product_title{
-    width: 12rem;
-}
-
-.input_style{
-    display: flex;
-    width: 346.667px;
-    padding: 15.072px 9.42px;
-    align-items: center;
-    gap: 9.42px;
-
-    border-radius: 7.536px;
-    border: 4px solid var(--neutral-500, #E1E1E1);
-    background: var(--neutral-100, #FCFEFF);
-}
-
-.subtitle_style{
-    color: var(--secondary-40, #5F626B);
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.title_style2{
-    color: var(--primary-70, #101010);
-
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-
-.booking_form_style{
-    margin-top: 1rem;
-    width: 23rem;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 5rem;
-}
-
-.description_form_style{
-    color: var(--primary-70, #101010);
-    text-align: center;
-    
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.title_form_style{
-    color: var(--primary-70, #101010);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    font-family: 'Poppins',sans-serif;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-}
-.category_title_loading{
-    width: 10rem;
-    height: 1.5rem;
-    margin-top: 0.9rem;
-    gap: 9px;
-    border-radius: 8px;
-    background-color: lightgray;
-}
-.category_loading{
-    width: 22.7rem;
-    height: 3rem;
-    margin-top: 0.9rem;
-    gap: 9px;
-    border-radius: 8px;
-    background-color: lightgray;
-}   
-
-.product_loading{
-    width: 22.7rem;
-    height: 10.5rem;
-    margin-top: 0.9rem;
-    gap: 9px;
-    border-radius: 8px;
-    background-color: lightgray;
+  margin: 0;
 }

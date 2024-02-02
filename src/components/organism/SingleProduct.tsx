@@ -10,10 +10,10 @@ import { SingleProductInfo } from "@/pages/api/DataType";
 function SingleProduct({ product_id }: { product_id: string }) {
   const [singleProduct, setSingleProduct] = useState<SingleProductInfo>();
   const [loading, setLoading] = useState(true);
-  const [totalQuantity,setTotalQuantity] = useState(0)
-  const handlerQuantityChange = (newQuantity:number) => {
+  const [totalQuantity, setTotalQuantity] = useState(0);
+  const handlerQuantityChange = (newQuantity: number) => {
     setTotalQuantity(newQuantity);
-  }
+  };
   useEffect(() => {
     const fetchSingleProductById = async (Product_id: string) => {
       const singleProductSupabase = await serviceFetchSingleProductById(
@@ -26,15 +26,21 @@ function SingleProduct({ product_id }: { product_id: string }) {
   }, [product_id]);
   return (
     <div>
-      <div className={styles.single_product_image_container_style}>
-        <CustomImage
-          src="/assets/ProductImage.png"
-          width={112}
-          height={111}
-          alt="ProductImage"
-          className=""
-        />
+      <div>
+        <div className={styles.single_product_image_container_style}>
+          <CustomImage
+            src="/assets/ProductImage.png"
+            width={112}
+            height={111}
+            alt="ProductImage"
+            className=""
+          />
+          <button className={styles.button_exit_product_style}>
+            <p className={styles.text_style_button_exit}>x</p>
+          </button>
+        </div>
       </div>
+
       {loading ? (
         <>Loading Single Product</>
       ) : (
@@ -66,8 +72,11 @@ function SingleProduct({ product_id }: { product_id: string }) {
         </p>
       </div>
       <div className={styles.footer_single_product_position}>
-        <PlusMinusProduct OnChangeTotalQuantity={handlerQuantityChange}/>
-        <TotalSection totalQuantity={totalQuantity} priceProduct={Number(singleProduct?.Price)}/>
+        <PlusMinusProduct OnChangeTotalQuantity={handlerQuantityChange} />
+        <TotalSection
+          totalQuantity={totalQuantity}
+          priceProduct={Number(singleProduct?.Price)}
+        />
       </div>
     </div>
   );
