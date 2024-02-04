@@ -9,9 +9,7 @@ interface OnChangeTotalQuantity {
 
 function PlusMinusProduct({OnChangeTotalQuantity}:OnChangeTotalQuantity) {
   const [quantityProducts, setQuantityProducts] = useState(0);
-  const checkQuatityProduct= () =>{
-    console.log(quantityProducts);
-  }
+
   return (
     <div className={styles.plusminus_product_section}>
       <button
