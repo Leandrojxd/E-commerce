@@ -453,6 +453,9 @@
   margin: 1rem 1rem;
 }
 
+.generate_space{
+  margin-top: 5rem;
+}
 .shopping_bag_footer_style {
   height: auto;
   width: 27.6rem;
@@ -460,10 +463,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6rem;
+  gap: 2.5rem;
 
   position: fixed;
-  left: -0.8rem;
+  left: -1.9rem;
   bottom: 0;
   background: var(--primary, #4187f7);
 }

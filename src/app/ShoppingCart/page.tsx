@@ -10,7 +10,7 @@ export default function ShoppingCart() {
         <TopHeaderCategoryProducts content='DETALLE DE TU RESERVA'/> 
         <ReserveProducts/>
         <BookingForm/>
-        <ShoppingBagFooter/>
+        <ShoppingBagFooter contextButtonShoppingBag='realizar pedido'/>
     </div>
   )
 }

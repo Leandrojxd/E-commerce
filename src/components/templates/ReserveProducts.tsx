@@ -1,13 +1,20 @@
+"use client"
+
 import React from 'react'
-import ReserveProductInformation from '../molecules/ReserveProductInformation'
 import BookingProductCard from '../organism/BookingProductCard'
+import { useShoppingCartContext } from '@/pages/api/DataContext'
 
 function ReserveProducts() {
+  const {shoppingCartReserveProducts} = useShoppingCartContext();
+  console.log(shoppingCartReserveProducts)
   return (
     <div>
-        <BookingProductCard/>
-        <BookingProductCard/>
-        <BookingProductCard/>
+        {
+          shoppingCartReserveProducts.map((reserveProduct)=>(
+            <BookingProductCard reserveProduct={reserveProduct}/>
+          ))
+        }
+        
     </div>
   )
 }

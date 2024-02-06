@@ -9,6 +9,9 @@ import { SingleProductInfo } from "@/pages/api/DataType";
 import { useShoppingCartContext } from "@/pages/api/DataContext";
 
 function SingleProduct({ product_id }: { product_id: string }) {
+  const handleGoBack = () => {
+    window.history.back();
+  };
   const [singleProduct, setSingleProduct] = useState<SingleProductInfo>();
   const [loading, setLoading] = useState(true);
   const [totalQuantity, setTotalQuantity] = useState(0);
@@ -46,7 +49,7 @@ function SingleProduct({ product_id }: { product_id: string }) {
             alt="ProductImage"
             className=""
           />
-          <button className={styles.button_exit_product_style}>
+          <button onClick={handleGoBack} className={styles.button_exit_product_style}>
             <p className={styles.text_style_button_exit}>x</p>
           </button>
         </div>

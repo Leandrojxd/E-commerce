@@ -1,12 +1,12 @@
 "use client"
 
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 interface ContextPropsReactNode {
   children: ReactNode;
 }
 
-interface ReserveProduct {
+export interface ReserveProduct {
   productName: string;
   productBrand: string;
   productPrice: string | null;
@@ -15,56 +15,71 @@ interface ReserveProduct {
 
 interface IContextValue {
   shoppingCartReserveProducts: ReserveProduct[];
-  currentProduct: ReserveProduct,
-  setCurrentProduct:(currentProduct: Partial<ReserveProduct>)=>void,
+  currentProduct: ReserveProduct;
+  setCurrentProduct: (currentProduct: Partial<ReserveProduct>) => void;
   addReserveProduct: (newData: Partial<ReserveProduct>) => void;
 }
 
 const defaultProductData: ReserveProduct[] = [];
-
-const defaultReserveProduct:ReserveProduct = {
-  productName: "",
-  productBrand: "",
-  productPrice: "",
-  productQuantity: "",
-}
+const defaultReserveProduct: ReserveProduct = {
+  productName: '',
+  productBrand: '',
+  productPrice: '',
+  productQuantity: '',
+};
 
 const shoppingCartContext = createContext<IContextValue>({
   shoppingCartReserveProducts: defaultProductData,
   currentProduct: defaultReserveProduct,
-  setCurrentProduct:()=>{},
+  setCurrentProduct: () => {},
   addReserveProduct: () => {},
 });
 
 export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ children }) => {
   const [shoppingCartReserveProducts, setShoppingCartReserveProducts] = useState<ReserveProduct[]>(defaultProductData);
-  const [currentProductInPage,setCurrentProductInPage] = useState<ReserveProduct>(defaultReserveProduct);
+  const [currentProductInPage, setCurrentProductInPage] = useState<ReserveProduct>(defaultReserveProduct);
+
+  // Recuperar datos del almacenamiento local al cargar el contexto
+  useEffect(() => {
+    const storedData = localStorage.getItem('shoppingCartReserveProducts');
+    if (storedData) {
+      setShoppingCartReserveProducts(JSON.parse(storedData));
+    }
+  }, []);
+
+  // Guardar datos en el almacenamiento local cada vez que cambia el estado
+  useEffect(() => {
+    localStorage.setItem('shoppingCartReserveProducts', JSON.stringify(shoppingCartReserveProducts));
+  }, [shoppingCartReserveProducts]);
 
   const setCurrentSingleProduct = (newCurrentProduct: Partial<ReserveProduct>) => {
-    if(currentProductInPage){
-      setCurrentProductInPage(newCurrentProduct as ReserveProduct)
+    if (currentProductInPage) {
+      setCurrentProductInPage((prevCurrentProduct) => ({
+        ...prevCurrentProduct,
+        ...newCurrentProduct,
+      }));
     }
-  }
+  };
 
   const updateProductData = (newData: Partial<ReserveProduct>) => {
     setShoppingCartReserveProducts((prevData) => {
-      const updatedData = [...prevData];
-      const existingProductIndex = updatedData.findIndex(
+      const existingProductIndex = prevData.findIndex(
         (product) => product.productName === newData.productName && product.productBrand === newData.productBrand
       );
 
       if (existingProductIndex !== -1) {
-        updatedData[existingProductIndex].productQuantity = newData.productQuantity as string;
+        return prevData.map((product, index) =>
+          index === existingProductIndex ? { ...product, productQuantity: newData.productQuantity as string } : product
+        );
       } else {
-        updatedData.push(newData as ReserveProduct);
+        return [...prevData, newData as ReserveProduct];
       }
-      return updatedData;
     });
   };
 
   const contextValue: IContextValue = {
     shoppingCartReserveProducts: shoppingCartReserveProducts,
-    currentProduct:currentProductInPage,
+    currentProduct: currentProductInPage,
     setCurrentProduct: setCurrentSingleProduct,
     addReserveProduct: updateProductData,
   };
@@ -75,8 +90,7 @@ export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ c
 export const useShoppingCartContext = (): IContextValue => {
   const context = useContext(shoppingCartContext);
   if (!context) {
-    throw new Error("Debe ser utilizado con el Price Provider");
+    throw new Error('Debe ser utilizado con el Price Provider');
   }
   return context;
 };
-

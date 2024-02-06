@@ -1,43 +1,38 @@
-import React, {useState} from "react";
-import styles from 'public/home.module.css';
+"use client";
 
-function PlusMinusReserve() {
-  const [quantityProducts, setQuantityProducts] = useState(0); 
+import React, { useState } from "react";
+import styles from "public/home.module.css";
 
-  const handleChangeTotalQuantity = (newQuantity) => {
-    console.log(`Nueva cantidad total: ${newQuantity}`);
-  };
+function PlusMinusReserve({reserveProductQuantity}:{reserveProductQuantity:string}) {
+  const [quantityProducts, setQuantityProducts] = useState(Number(reserveProductQuantity));
 
   const handleDecrement = () => {
     if (quantityProducts - 1 >= 0) {
       setQuantityProducts((prev) => prev - 1);
-      handleChangeTotalQuantity(quantityProducts - 1);
     }
   };
 
   const handleIncrement = () => {
     setQuantityProducts((prev) => prev + 1);
-    handleChangeTotalQuantity(quantityProducts + 1);
   };
 
   return (
-    <div className={styles.plusminus_product_section}>
+    <div className={styles.plusminus_reserve_section}>
       <button
         className={styles.plusminus_button_style}
         onClick={handleDecrement}
       >
-        <div className={styles.plusminus_button_text_position}>
-          <p className={styles.plusminus_button_text_style}>-</p>
-        </div>
+
+        <p className={styles.description_card}>-</p>
+
+        
       </button>
-      <p className={styles.plusminus_section_text_style}> {quantityProducts} </p>
+      <p className={styles.title_card}> {quantityProducts} </p>
       <button
         className={styles.plusminus_button_style}
         onClick={handleIncrement}
       >
-        <div className={styles.plusminus_button_text_position}>
-          <p className={styles.description_card}>+</p>
-        </div>
+        <p className={styles.description_card}>+</p>
       </button>
     </div>
   );
