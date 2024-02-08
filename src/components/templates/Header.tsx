@@ -31,7 +31,7 @@ function Header() {
         <CustomImage
           src={urlImage?.Url_Image as string}
           alt={urlImage?.Name as string}
-          width={300}
+          width={366}
           height={200}
         />
       )}

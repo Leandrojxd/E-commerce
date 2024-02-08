@@ -13,9 +13,7 @@ const MakeAnOrderButton = ({
   const sendMessage = () => {
     const message = encodeURIComponent("Hola mensaje predeterminado");
     const phoneNumber = "65774908";
-
-    const currentURL = window.location.href;
-
+    
     window.location.href = `whatsapp://send?phone=${phoneNumber}&text=${message}`;
 
     setTimeout(() => {
