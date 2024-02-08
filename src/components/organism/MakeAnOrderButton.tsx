@@ -42,7 +42,7 @@ const MakeAnOrderButton = ({
       ) : (
         <Link href={"./ShoppingCart"}>
           <div>
-            <button className={styles.button_style3} onClick={sendMessage}>
+            <button className={styles.button_style3}>
               <div className={styles.button_style3_position}>
                 <Image
                   src={"/assets/shopping-bag.png"}
