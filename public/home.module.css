@@ -458,7 +458,7 @@
 }
 .shopping_bag_footer_style {
   height: auto;
-  width: 27.6rem;
+  width: 27rem;
 
   display: flex;
   align-items: center;
@@ -626,7 +626,7 @@
 
 .booking_productcard_position {
   display: flex;
-  width: 346px;
+  width: auto;
   padding: 20px 0px;
   align-items: center;
   gap: 44px;

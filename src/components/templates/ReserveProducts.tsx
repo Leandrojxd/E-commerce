@@ -6,15 +6,13 @@ import { useShoppingCartContext } from '@/pages/api/DataContext'
 
 function ReserveProducts() {
   const {shoppingCartReserveProducts} = useShoppingCartContext();
-  console.log(shoppingCartReserveProducts)
   return (
     <div>
         {
           shoppingCartReserveProducts.map((reserveProduct)=>(
             <BookingProductCard reserveProduct={reserveProduct}/>
           ))
-        }
-        
+        }      
     </div>
   )
 }

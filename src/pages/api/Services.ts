@@ -1,5 +1,6 @@
 import supabase from "@/pages/api/supabase";
 import { CategoriesData, ImageAssets, ProductsData, SingleProductInfo } from "./DataType";
+import { ReserveProduct } from "./DataContext";
 
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -60,4 +61,17 @@ export const serviceFetchSingleProductById = async (Product_id: string):Promise<
       console.log("Error un single product Service")
     }
     return data as SingleProductInfo
+};
+
+
+//GET TOTAL PRICE FROM RESERVE PRODUCTS
+export const getTotalPriceFromShoppingCartProducts = (reserveProducts: ReserveProduct[]): number => {
+  if (reserveProducts.length === 0) {
+    return 0; 
+  }
+
+  const totalPrice: number = reserveProducts.reduce((total, { productPrice }) => {
+    return total + parseFloat(productPrice as string);
+  }, 0);
+  return parseFloat(totalPrice.toFixed(2))
 };

@@ -9,7 +9,6 @@ import styles from "public/home.module.css";
 
 export default function Home() {
   const { shoppingCartReserveProducts } = useShoppingCartContext();
-  console.log(shoppingCartReserveProducts);
   return (
     <main>
       <Header />
