@@ -63,15 +63,30 @@ export const serviceFetchSingleProductById = async (Product_id: string):Promise<
     return data as SingleProductInfo
 };
 
+export const serviceFetchProductsByCategory = async (Category_id:string): Promise<ProductsData[]> => {
+  const {data, error} = await supabase.from('Products').select('*').eq('Category_id',Category_id);
+  if(error){
+    console.log("Error fetch products by category_id")
+  }
+  return data as ProductsData[]; 
+}
 
 //GET TOTAL PRICE FROM RESERVE PRODUCTS
 export const getTotalPriceFromShoppingCartProducts = (reserveProducts: ReserveProduct[]): number => {
   if (reserveProducts.length === 0) {
     return 0; 
   }
-
   const totalPrice: number = reserveProducts.reduce((total, { productPrice }) => {
     return total + parseFloat(productPrice as string);
   }, 0);
   return parseFloat(totalPrice.toFixed(2))
 };
+
+export const getCategoryName = async (Category_id:string): Promise<string> => {
+  const {data,error} = await supabase.from('Category').select('Name').eq('Category_id',Category_id).single();
+  if(error){
+    console.log("Error fetch category name")
+  }
+  console.log(data)
+  return data?.Name as string;
+}

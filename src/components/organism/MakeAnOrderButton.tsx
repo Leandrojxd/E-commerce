@@ -11,7 +11,7 @@ const MakeAnOrderButton = ({
   contextButtonShoppingBag: string;
 }) => {
   const sendMessage = () => {
-    const message = encodeURIComponent("Hola mensaje predeterminado");
+    const message = encodeURIComponent("Hola");
     const phoneNumber = "65774908";
     
     window.location.href = `whatsapp://send?phone=${phoneNumber}&text=${message}`;

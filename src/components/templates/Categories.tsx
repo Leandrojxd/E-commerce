@@ -1,6 +1,6 @@
 "use client";
 
-import CategoryItem from "../molecules/CategoryItem";
+import CategoryCard from "../molecules/CategoryCard";
 import styles from "public/home.module.css";
 import { getAllByNameOfTable } from "@/pages/api/Services";
 import { CategoriesData } from "@/pages/api/DataType";
@@ -35,8 +35,9 @@ function Categories() {
         <CategoryLoading />
       ) : (
         categories.map((category, index) => (
-          <CategoryItem
+          <CategoryCard
             key={index}
+            category_id={category.Category_id}
             source={category.Url_Image}
             title={category.Name}
             subtitle={category.Description}

@@ -11,7 +11,7 @@ export default function CategoryProducts() {
         <div className={styles.category_products_position}>
           <ProductCard title='TITLE PRODUCT' brand='BRAND PRODUCT' description='This is the description' price='25' product_id='1'/>
         </div>
-        <ShoppingBagFooter/>
+        <ShoppingBagFooter contextButtonShoppingBag='realizar pedido'/>
     </div>
   )
 }

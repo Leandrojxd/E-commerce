@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import styles from "public/home.module.css";
 import CustomImage from "../atoms/CustomImage";
 import PlusMinusProduct from "../molecules/PlusMinusProduct";
