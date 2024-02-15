@@ -8,20 +8,17 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { useEffect, useState } from "react";
 import CategoryLoading from "@/app/SkeletonLoading/CategoryLoading";
 
-function Categories() {
+function Categories({categoriesDataByQuery = []}:{categoriesDataByQuery?:CategoriesData[]}) {
   const [categories, setCategories] = useState<CategoriesData[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const categoriesData = await getAllByNameOfTable("Category");
-        setCategories(categoriesData as CategoriesData[]);
-      } catch (error) {
-        console.error("Error fetching categories:", error);
-      } finally {
-        setLoading(false);
-      }
+      const data = categoriesDataByQuery.length === 0? 
+      ((await getAllByNameOfTable("Category")) as CategoriesData[])
+          : categoriesDataByQuery;
+      setCategories(data);
+      setLoading(false);
     };
 
     fetchData();

@@ -15,7 +15,6 @@ type ParamsProps = {
 export default function Product({ params }: ParamsProps) {
   const typeItem = params.item_catalog.replace(/[0-9]/g, "");
   const item_id = params.item_catalog.replace(/\D/g, "");
-  console.log(typeItem);
   return (
     <div>
       {typeItem === "P" ? (

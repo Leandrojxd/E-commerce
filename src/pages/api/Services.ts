@@ -35,16 +35,16 @@ export const getImageByName = async (
   return data as ImageAssets;
 };
 
-export const fetchDataByQuery = async (searchQuery: string):Promise<ProductsData[]> => {
+export const fetchDataByQuery = async (searchQuery: string,NameTableData:string):Promise<ProductsData[] | CategoriesData[]> => {
   try {
-    const { data, error } = await supabase.from("Products")
+    const { data, error } = await supabase.from(NameTableData)
     .select("*")
     .textSearch("Name",searchQuery);
     
     if (error) {
       throw error;
     }
-    return data as ProductsData[];
+    return data;
   } catch (error) {
     console.error("Error getting the data byQuery:", error);
     return [];

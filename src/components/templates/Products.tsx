@@ -11,12 +11,12 @@ type ProductsProps = {
   productsDataByQuery?: ProductsData[];
 };
 
-function Products({ productsDataByQuery = [] }: ProductsProps) {
+function Products({ productsDataByQuery = []}: ProductsProps) {
   const [productsData,setProductsData] = useState<ProductsData[]>([])
   const [loading, setLoading] = useState(true)
   useEffect(() => {
     const getDataProducts = async () => {
-      const data = productsDataByQuery.length === 0 ? 
+      const data = productsDataByQuery.length === 0? 
       ((await getAllByNameOfTable("Products")) as ProductsData[])
           : productsDataByQuery;
       setProductsData(data);

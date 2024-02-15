@@ -16,7 +16,7 @@ type ProductCardProps = {
 function ProductCard({ title, brand, description, price, product_id}: ProductCardProps) {
 
   return (
-    <Link href={`./Catalog/${product_id}P`} className={styles.link_style}>
+    <Link href={`../Catalog/${product_id}P`} className={styles.link_style}>
       <div className={styles.product_card_link} >
         <div className={styles.product_card_style}>
           <ProductDescription title={title} brand={brand} description={description} price={`$us ${price}.00`} />

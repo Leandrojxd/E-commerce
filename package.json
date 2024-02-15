@@ -21,7 +21,7 @@
     "express-pino-logger": "^7.0.0",
     "fs": "^0.0.1-security",
     "net": "^1.0.2",
-    "next": "14.0.2",
+    "next": "^14.1.1-canary.53",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-loading-skeleton": "^3.3.1",

@@ -49,7 +49,10 @@ function SingleProduct({ product_id }: { product_id: string }) {
             alt="ProductImage"
             className=""
           />
-          <button onClick={handleGoBack} className={styles.button_exit_product_style}>
+          <button
+            onClick={handleGoBack}
+            className={styles.button_exit_product_style}
+          >
             <p className={styles.text_style_button_exit}>x</p>
           </button>
         </div>
@@ -75,16 +78,14 @@ function SingleProduct({ product_id }: { product_id: string }) {
               </p>
             </div>
           </div>
+          <div>
+            <p className={styles.description_single_product_style}>
+              {singleProduct?.Description}
+            </p>
+          </div>
         </div>
       )}
-      <div>
-        <p className={styles.description_single_product_style}>
-          Cilindro de aluminio MED540 1M3 2021. <br />
-          <br></br>
-          Cilindro de aluminio de uso medicinal de 1M3 ano 2021 con valvula
-          GCA540
-        </p>
-      </div>
+
       <div className={styles.footer_single_product_position}>
         <PlusMinusProduct OnChangeTotalQuantity={handlerQuantityChange} />
         <TotalSection

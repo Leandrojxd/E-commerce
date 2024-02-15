@@ -12,7 +12,7 @@ type CategoryItemProps = {
 
 function CategoryCard({ source, title, subtitle,category_id }: CategoryItemProps) {
   return (
-    <Link href={`./Catalog/${category_id}C`}>
+    <Link href={`./Catalog/${category_id}C`} className={styles.link_style}>
       <div className={styles.categoryItem}>
         <CustomImage
           src={source}

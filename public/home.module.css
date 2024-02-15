@@ -99,6 +99,7 @@
 }
 
 .categoryItem {
+  text-decoration: none;
   display: flex;
   width: 20.5rem;
   padding: 0rem 1.25rem;
@@ -134,6 +135,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  text-decoration: none;
 }
 
 .description_text_style {
@@ -626,7 +628,7 @@
 
 .booking_productcard_position {
   display: flex;
-  width: auto;
+  width: auto ;
   padding: 20px 0px;
   align-items: center;
   gap: 44px;

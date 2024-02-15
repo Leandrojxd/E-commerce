@@ -38,7 +38,7 @@ const MakeAnOrderButton = ({
           </div>
         </button>
       ) : (
-        <Link href={"./ShoppingCart"}>
+        <Link href={"../ShoppingCart"}>
           <div>
             <button className={styles.button_style3}>
               <div className={styles.button_style3_position}>
