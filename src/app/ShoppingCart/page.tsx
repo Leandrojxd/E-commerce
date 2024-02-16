@@ -6,7 +6,7 @@ import EmptyShoppingCart from "@/components/templates/EmptyShoppingCart";
 import ReserveProducts from "@/components/templates/ReserveProducts";
 import ShoppingBagFooter from "@/components/templates/ShoppingBagFooter";
 import { useShoppingCartContext } from "@/pages/api/DataContext";
-import React, { Suspense } from "react";
+import React from "react";
 
 export default function ShoppingCart() {
   const { shoppingCartReserveProducts } = useShoppingCartContext();

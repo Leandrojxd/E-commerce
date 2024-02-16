@@ -19,7 +19,7 @@ export default async function handler(
       await client.messages.create({
         body:"",
         from: twilioPhoneNumber,
-        to:"whatsapp:+",
+        to:"whatsapp:+59170342225",
       });
 
       res.status(200).json({ success: true });

@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import styles from "public/home.module.css";
 
 function PlusMinusReserve({reserveProductQuantity}:{reserveProductQuantity:string}) {
-
-  console.log(reserveProductQuantity)
   const [quantityProducts, setQuantityProducts] = useState(Number(reserveProductQuantity));
   const handleDecrement = () => {
     if (quantityProducts - 1 >= 0) {
