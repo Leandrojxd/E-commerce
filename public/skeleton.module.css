@@ -6,3 +6,39 @@
     border-radius: 8px;
     background-color: lightgray;
 }
+
+.single_product_title_skeleton{
+    width: 9rem;
+    height: 3rem;
+    background-color: lightgray;
+    border-radius: 0.5rem;
+}
+
+.single_product_price_skeleton{
+    width: 4.5rem;
+    height: 2rem;
+    background-color: lightgray;
+    border-radius: 0.5rem;
+}
+.single_product_info_skeleton{
+    width: 4rem;
+    height: 1.4rem;
+    margin-top: 0.3rem;
+    background-color: lightgray;
+    border-radius: 0.5rem;
+}
+.single_product_position_price_quantity{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.single_product_description_skeleton{
+    width: auto;
+    height: 2.5rem;
+    border-radius: 0.5rem;
+    background-color: lightgray;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+

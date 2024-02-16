@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { serviceFetchSingleProductById } from "@/pages/api/Services";
 import { SingleProductInfo } from "@/pages/api/DataType";
 import { useShoppingCartContext } from "@/pages/api/DataContext";
+import SingleProductLoadingSkeleton from "@/app/SkeletonLoading/SingleProductLoadingSkeleton";
 
 function SingleProduct({ product_id }: { product_id: string }) {
   const handleGoBack = () => {
@@ -58,8 +59,8 @@ function SingleProduct({ product_id }: { product_id: string }) {
         </div>
       </div>
 
-      {loading ? (
-        <>Loading Single Product</>
+      {!loading ? (
+        <SingleProductLoadingSkeleton/>
       ) : (
         <div>
           <div className={styles.single_product_header_position}>
