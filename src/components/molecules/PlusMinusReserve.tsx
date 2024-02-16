@@ -4,8 +4,9 @@ import React, { useState } from "react";
 import styles from "public/home.module.css";
 
 function PlusMinusReserve({reserveProductQuantity}:{reserveProductQuantity:string}) {
-  const [quantityProducts, setQuantityProducts] = useState(Number(reserveProductQuantity));
 
+  console.log(reserveProductQuantity)
+  const [quantityProducts, setQuantityProducts] = useState(Number(reserveProductQuantity));
   const handleDecrement = () => {
     if (quantityProducts - 1 >= 0) {
       setQuantityProducts((prev) => prev - 1);
@@ -22,10 +23,7 @@ function PlusMinusReserve({reserveProductQuantity}:{reserveProductQuantity:strin
         className={styles.plusminus_button_style}
         onClick={handleDecrement}
       >
-
         <p className={styles.description_card}>-</p>
-
-        
       </button>
       <p className={styles.title_card}> {quantityProducts} </p>
       <button

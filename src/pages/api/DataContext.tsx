@@ -39,7 +39,6 @@ export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ c
   const [shoppingCartReserveProducts, setShoppingCartReserveProducts] = useState<ReserveProduct[]>(defaultProductData);
   const [currentProductInPage, setCurrentProductInPage] = useState<ReserveProduct>(defaultReserveProduct);
 
-  // Recuperar datos del almacenamiento local al cargar el contexto
   useEffect(() => {
     const storedData = localStorage.getItem('shoppingCartReserveProducts');
     if (storedData) {
@@ -47,7 +46,6 @@ export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ c
     }
   }, []);
 
-  // Guardar datos en el almacenamiento local cada vez que cambia el estado
   useEffect(() => {
     localStorage.setItem('shoppingCartReserveProducts', JSON.stringify(shoppingCartReserveProducts));
   }, [shoppingCartReserveProducts]);
