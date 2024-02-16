@@ -59,7 +59,7 @@ function SingleProduct({ product_id }: { product_id: string }) {
         </div>
       </div>
 
-      {!loading ? (
+      {loading ? (
         <SingleProductLoadingSkeleton/>
       ) : (
         <div>
