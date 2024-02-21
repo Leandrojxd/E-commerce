@@ -6,11 +6,14 @@ import EmptyShoppingCart from "@/components/templates/EmptyShoppingCart";
 import ReserveProducts from "@/components/templates/ReserveProducts";
 import ShoppingBagFooter from "@/components/templates/ShoppingBagFooter";
 import { useShoppingCartContext } from "@/pages/api/DataContext";
+import { UserContextProvider } from "@/pages/api/UserContext";
 import React from "react";
 
 export default function ShoppingCart() {
   const { shoppingCartReserveProducts } = useShoppingCartContext();
   return (
+    <UserContextProvider>
+      
     <div>
       {shoppingCartReserveProducts.length > 0 ? (
         <>
@@ -25,5 +28,8 @@ export default function ShoppingCart() {
         </>
       )}
     </div>
+
+    </UserContextProvider>
+
   );
 }

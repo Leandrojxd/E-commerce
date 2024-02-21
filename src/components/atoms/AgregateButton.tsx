@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 function AgregateButton({totalQuantity}:{totalQuantity:number}) {
   const { currentProduct,addReserveProduct,setCurrentProduct } = useShoppingCartContext()
   const sendReserveProductInfo = () => {
-    console.log("Agregate button inside send",totalQuantity)
     setCurrentProduct({
       productQuantity: String(totalQuantity),
     }); 
