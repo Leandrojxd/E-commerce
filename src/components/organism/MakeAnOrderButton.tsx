@@ -4,16 +4,26 @@ import React from "react";
 import Image from "next/image";
 import styles from "public/home.module.css";
 import Link from "next/link";
+import { useUserContext } from "@/pages/api/UserContext";
+import { useShoppingCartContext } from "@/pages/api/DataContext";
 
-const MakeAnOrderButton = ({
-  contextButtonShoppingBag,
-}: {
-  contextButtonShoppingBag: string;
-}) => {
+const MakeAnOrderButton = ({contextButtonShoppingBag,}: {contextButtonShoppingBag: string;}) => {
+  const { user } = useUserContext();
+  const { shoppingCartReserveProducts } = useShoppingCartContext();
   const sendMessage = () => {
-    const message = encodeURIComponent("Hola");
-    const phoneNumber = "65774908";
+    const listOfProductsTextFormat = shoppingCartReserveProducts.map(
+      (product) => {
+        return `${product.productName} - ${product.productBrand} - ${
+          product.productPrice ?? "Precio no disponible"
+        } - ${product.productQuantity}`;
+      }
+    ).join('\n- ');
     
+    const message =
+      encodeURIComponent(`Hola me llamo *${user.userName}* pedido para la ciudad - *${user.destinyCity}* \nProductos:\n- ${listOfProductsTextFormat}`);
+    
+    const phoneNumber = "65774908";
+
     window.location.href = `whatsapp://send?phone=${phoneNumber}&text=${message}`;
 
     setTimeout(() => {
