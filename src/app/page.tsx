@@ -6,23 +6,13 @@ import Products from "@/components/templates/Products";
 import ShoppingBagFooter from "@/components/templates/ShoppingBagFooter";
 import { useShoppingCartContext } from "@/pages/api/DataContext";
 import styles from "public/home.module.css";
+import CheckoutPageFinal from "./CheckoutPage/page";
 
 export default function Home() {
   const { shoppingCartReserveProducts } = useShoppingCartContext();
   return (
     <main>
-      <Header />
-      <Categories />
-      <Products />
-
-      {shoppingCartReserveProducts.length != 0 ? (
-        <>
-          <div className={styles.generate_space} />
-          <ShoppingBagFooter contextButtonShoppingBag="ver pedido" />
-        </>
-      ) : (
-        <></>
-      )}
+      <CheckoutPageFinal/>
     </main>
   );
 }

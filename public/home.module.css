@@ -781,3 +781,17 @@
 
   margin: 0;
 }
+
+.checkout_page_position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkout_page_button_position {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
