@@ -4,7 +4,6 @@ import PlusMinusReserve from "../molecules/PlusMinusReserve";
 import { ReserveProduct } from "@/pages/api/DataContext";
 
 function BookingProductCard({reserveProduct}:{reserveProduct:ReserveProduct}) {
-  console.log(reserveProduct.productQuantity)
   return (
     <div className={styles.booking_productcard_position}>
       <div className={styles.booking_product_image_style}>

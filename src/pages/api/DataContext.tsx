@@ -18,6 +18,7 @@ interface IContextValue {
   currentProduct: ReserveProduct;
   setCurrentProduct: (currentProduct: Partial<ReserveProduct>) => void;
   addReserveProduct: (newData: Partial<ReserveProduct>) => void;
+  setReserveProductsFromLocalStorage: () => void;
 }
 
 const defaultProductData: ReserveProduct[] = [];
@@ -33,22 +34,12 @@ const shoppingCartContext = createContext<IContextValue>({
   currentProduct: defaultReserveProduct,
   setCurrentProduct: () => {},
   addReserveProduct: () => {},
+  setReserveProductsFromLocalStorage: () => {},
 });
 
 export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ children }) => {
   const [shoppingCartReserveProducts, setShoppingCartReserveProducts] = useState<ReserveProduct[]>(defaultProductData);
   const [currentProductInPage, setCurrentProductInPage] = useState<ReserveProduct>(defaultReserveProduct);
-
-  useEffect(() => {
-    const storedData = localStorage.getItem('shoppingCartReserveProducts');
-    if (storedData) {
-      setShoppingCartReserveProducts(JSON.parse(storedData));
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem('shoppingCartReserveProducts', JSON.stringify(shoppingCartReserveProducts));
-  }, [shoppingCartReserveProducts]);
 
   const setCurrentSingleProduct = (newCurrentProduct: Partial<ReserveProduct>) => {
     if (currentProductInPage) {
@@ -58,13 +49,15 @@ export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ c
       }));
     }
   };
-
+  const setReserveProductsFromLocalStorage = ():void => {
+    const storeDataFromLocalStorage:ReserveProduct[] = JSON.parse(localStorage.getItem('shoppingCartReserveProducts') as string);
+    setShoppingCartReserveProducts(storeDataFromLocalStorage as ReserveProduct[]);
+  }
   const updateProductData = (newData: Partial<ReserveProduct>) => {
     setShoppingCartReserveProducts((prevData) => {
       const existingProductIndex = prevData.findIndex(
         (product) => product.productName === newData.productName && product.productBrand === newData.productBrand
       );
-
       if (existingProductIndex !== -1) {
         return prevData.map((product, index) =>
           index === existingProductIndex ? { ...product, productQuantity: newData.productQuantity as string } : product
@@ -80,6 +73,7 @@ export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ c
     currentProduct: currentProductInPage,
     setCurrentProduct: setCurrentSingleProduct,
     addReserveProduct: updateProductData,
+    setReserveProductsFromLocalStorage: setReserveProductsFromLocalStorage,
   };
 
   return <shoppingCartContext.Provider value={contextValue}>{children}</shoppingCartContext.Provider>;

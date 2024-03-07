@@ -12,7 +12,18 @@ export default function Home() {
   const { shoppingCartReserveProducts } = useShoppingCartContext();
   return (
     <main>
-      <CheckoutPageFinal/>
+      <Header />
+      <Categories />
+      <Products />
+
+      {shoppingCartReserveProducts.length != 0 ? (
+        <>
+          <div className={styles.generate_space} />
+          <ShoppingBagFooter contextButtonShoppingBag="ver pedido" />
+        </>
+      ) : (
+        <></>
+      )}
     </main>
   );
 }
