@@ -3,7 +3,7 @@ import styles from "public/home.module.css";
 import PlusMinusReserve from "../molecules/PlusMinusReserve";
 import { ReserveProduct } from "@/pages/api/DataContext";
 
-function BookingProductCard({reserveProduct}:{reserveProduct:ReserveProduct}) {
+function BookingProductCard({reserveProduct,index}:{reserveProduct:ReserveProduct,index:number}) {
   return (
     <div className={styles.booking_productcard_position}>
       <div className={styles.booking_product_image_style}>
@@ -27,7 +27,7 @@ function BookingProductCard({reserveProduct}:{reserveProduct:ReserveProduct}) {
               <p className={styles.description_card}>$us {reserveProduct.productPrice}</p>
             </div>
           </div>
-          <PlusMinusReserve reserveProductQuantity={reserveProduct.productQuantity}/>
+          <PlusMinusReserve indexProduct={index} reserveProductQuantity={reserveProduct.productQuantity}/>
         </div>
       </div>
     </div>

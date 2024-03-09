@@ -19,6 +19,7 @@ interface IContextValue {
   setCurrentProduct: (currentProduct: Partial<ReserveProduct>) => void;
   addReserveProduct: (newData: Partial<ReserveProduct>) => void;
   setReserveProductsFromLocalStorage: () => void;
+  getReserveProductById: (index:number) => ReserveProduct;
 }
 
 const defaultProductData: ReserveProduct[] = [];
@@ -35,6 +36,7 @@ const shoppingCartContext = createContext<IContextValue>({
   setCurrentProduct: () => {},
   addReserveProduct: () => {},
   setReserveProductsFromLocalStorage: () => {},
+  getReserveProductById: (index:number):ReserveProduct => {return defaultReserveProduct},
 });
 
 export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ children }) => {
@@ -49,6 +51,12 @@ export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ c
       }));
     }
   };
+
+  const getReserveProductById = (index:number):ReserveProduct => {
+    const reserveProduct  = shoppingCartReserveProducts[index];
+    return reserveProduct;
+  }
+
   const setReserveProductsFromLocalStorage = ():void => {
     const storeDataFromLocalStorage:ReserveProduct[] = JSON.parse(localStorage.getItem('shoppingCartReserveProducts') as string);
     setShoppingCartReserveProducts(storeDataFromLocalStorage as ReserveProduct[]);
@@ -65,7 +73,9 @@ export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ c
       } else {
         return [...prevData, newData as ReserveProduct];
       }
+      
     });
+    console.log(shoppingCartReserveProducts)
   };
 
   const contextValue: IContextValue = {
@@ -74,6 +84,7 @@ export const ShoppingCartContextProvider: React.FC<ContextPropsReactNode> = ({ c
     setCurrentProduct: setCurrentSingleProduct,
     addReserveProduct: updateProductData,
     setReserveProductsFromLocalStorage: setReserveProductsFromLocalStorage,
+    getReserveProductById: getReserveProductById,
   };
 
   return <shoppingCartContext.Provider value={contextValue}>{children}</shoppingCartContext.Provider>;

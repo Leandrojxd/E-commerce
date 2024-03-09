@@ -9,7 +9,7 @@ function ReserveProducts() {
   return (
     <div>
       {shoppingCartReserveProducts.map((reserveProduct, index) => (
-        <BookingProductCard key={index} reserveProduct={reserveProduct} />
+        <BookingProductCard key={index} index={index} reserveProduct={reserveProduct} />
       ))}
     </div>
   );

@@ -1,10 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "public/home.module.css";
+import { ReserveProduct, useShoppingCartContext } from "@/pages/api/DataContext";
 
-function PlusMinusReserve({reserveProductQuantity}:{reserveProductQuantity:string}) {
+function PlusMinusReserve({reserveProductQuantity,indexProduct}:{reserveProductQuantity:string,indexProduct:number}) {
+  const {addReserveProduct,getReserveProductById,shoppingCartReserveProducts} = useShoppingCartContext();
   const [quantityProducts, setQuantityProducts] = useState(Number(reserveProductQuantity));
+  let reserveProductByIndex:ReserveProduct = getReserveProductById(indexProduct);
+  useEffect(()=>{
+    if(reserveProductByIndex){
+      console.log(quantityProducts + "useEffect")
+      addReserveProduct({
+        productName: reserveProductByIndex.productName,
+        productBrand: reserveProductByIndex.productBrand,
+        productPrice: reserveProductByIndex.productPrice,
+        productQuantity: String(quantityProducts + 1),
+      })
+      localStorage.setItem("shoppingCartReserveProducts",JSON.stringify(shoppingCartReserveProducts))
+    }else{
+      console.log("no existe")
+    }
+    
+  },[quantityProducts])
+
   const handleDecrement = () => {
     if (quantityProducts - 1 >= 0) {
       setQuantityProducts((prev) => prev - 1);
