@@ -6,44 +6,42 @@ import NoResults from "@/components/templates/NoResults";
 import Products from "@/components/templates/Products";
 import { CategoriesData, ProductsData } from "@/pages/api/DataType";
 import { fetchDataByQuery } from "@/pages/api/Services";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/router";
+import { useRouter, useSearchParams } from "next/navigation";
 import styles from "public/home.module.css";
 import { useEffect, useState } from "react";
 
 export default function Catalog() {
-  const router = useRouter();
+  const search = useSearchParams();
+  const searchQuery = search ? search?.get("q") : null;
   const [categories, setCategories] = useState<CategoriesData[]>([]);
   const [products, setProducts] = useState<ProductsData[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Verifica si el enrutador está disponible y no es el servidor de Next.js
-    if (typeof window !== 'undefined') {
-      const searchQuery = router.query.q as string;
-      if (searchQuery) {
-        fetchData(searchQuery);
+    const fetchData = async () => {
+      try {
+        const productsData = await fetchDataByQuery(
+          searchQuery as string,
+          "Products"
+        );
+        const categoriesData = await fetchDataByQuery(
+          searchQuery as string,
+          "Category"
+        );
+        setProducts(productsData as ProductsData[]);
+        setCategories(categoriesData as CategoriesData[]);
+      } catch (error) {
+        console.error("Error fetching products:", error);
+      } finally {
+        setLoading(false);
       }
-    }
-  }, [router.query.q]); // Reaccionar a cambios en la query de la URL
-
-  const fetchData = async (searchQuery: string) => {
-    try {
-      const productsData = await fetchDataByQuery(searchQuery, "Products");
-      const categoriesData = await fetchDataByQuery(searchQuery, "Category");
-      setProducts(productsData as ProductsData[]);
-      setCategories(categoriesData as CategoriesData[]);
-    } catch (error) {
-      console.error("Error fetching products:", error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+    };
+    fetchData();
+  }, [searchQuery]);
   return (
     <main className={styles.catalog_page_style}>
       <FilterSearchBar />
-      {products.length !== 0 && !loading ? (
+      {products.length!=0 && !loading ? (
         <>
           <Categories categoriesDataByQuery={categories} />
           <Products productsDataByQuery={products} />
