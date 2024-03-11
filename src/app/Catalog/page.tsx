@@ -18,9 +18,12 @@ export default function Catalog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const searchQuery = router.query.q as string;
-    if (searchQuery) {
-      fetchData(searchQuery);
+    // Verifica si el enrutador está disponible antes de utilizarlo
+    if (typeof window !== 'undefined') {
+      const searchQuery = router.query.q as string;
+      if (searchQuery) {
+        fetchData(searchQuery);
+      }
     }
   }, [router.query.q]);
 
