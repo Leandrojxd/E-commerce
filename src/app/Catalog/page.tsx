@@ -18,14 +18,14 @@ export default function Catalog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Verifica si el enrutador está disponible antes de utilizarlo
+    // Verifica si el enrutador está disponible y no es el servidor de Next.js
     if (typeof window !== 'undefined') {
       const searchQuery = router.query.q as string;
       if (searchQuery) {
         fetchData(searchQuery);
       }
     }
-  }, [router.query.q]);
+  }, [router.query.q]); // Reaccionar a cambios en la query de la URL
 
   const fetchData = async (searchQuery: string) => {
     try {
