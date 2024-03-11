@@ -8,7 +8,7 @@ import { CategoriesData, ProductsData } from "@/pages/api/DataType";
 import { fetchDataByQuery } from "@/pages/api/Services";
 import { useRouter, useSearchParams } from "next/navigation";
 import styles from "public/home.module.css";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 export default function Catalog() {
   const search = useSearchParams();
@@ -36,19 +36,23 @@ export default function Catalog() {
         setLoading(false);
       }
     };
+
     fetchData();
   }, [searchQuery]);
+
   return (
     <main className={styles.catalog_page_style}>
       <FilterSearchBar />
-      {products.length!=0 && !loading ? (
-        <>
-          <Categories categoriesDataByQuery={categories} />
-          <Products productsDataByQuery={products} />
-        </>
-      ) : (
-        <NoResults/>
-      )}
+      <Suspense fallback={<div>Loading...</div>}>
+        {products.length !== 0 && !loading ? (
+          <>
+            <Categories categoriesDataByQuery={categories} />
+            <Products productsDataByQuery={products} />
+          </>
+        ) : (
+          <NoResults />
+        )}
+      </Suspense>
     </main>
   );
 }
