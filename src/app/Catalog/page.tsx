@@ -17,28 +17,6 @@ export default function Catalog() {
   const [products, setProducts] = useState<ProductsData[]>([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const productsData = await fetchDataByQuery(
-          searchQuery as string,
-          "Products"
-        );
-        const categoriesData = await fetchDataByQuery(
-          searchQuery as string,
-          "Category"
-        );
-        setProducts(productsData as ProductsData[]);
-        setCategories(categoriesData as CategoriesData[]);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, [searchQuery]);
 
   return (
     <main className={styles.catalog_page_style}>
