@@ -24,8 +24,6 @@ export default function Catalog() {
       <Suspense fallback={<div>Loading...</div>}>
         {products.length !== 0 && !loading ? (
           <>
-            <Categories categoriesDataByQuery={categories} />
-            <Products productsDataByQuery={products} />
           </>
         ) : (
           <NoResults />
