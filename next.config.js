@@ -13,12 +13,7 @@ const nextConfig = {
 };
 
 module.exports = {
-  // Puede eliminarse de forma segura en las versiones más nuevas de Next.js
-  future: {
-    // Por defecto, si personalizas la configuración de webpack, volverán a la versión 4.
-    // Parece un enfoque de compatibilidad hacia atrás.
-    webpack5: true,
-  },
+  
 
   webpack(config) {
     config.resolve.fallback = {
