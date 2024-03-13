@@ -11,47 +11,5 @@ import styles from "public/home.module.css";
 import { Suspense, useEffect, useState } from "react";
 
 export default function Catalog() {
-  const search = useSearchParams();
-  const searchQuery = search ? search?.get("q") : null;
-  const [categories, setCategories] = useState<CategoriesData[]>([]);
-  const [products, setProducts] = useState<ProductsData[]>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const productsData = await fetchDataByQuery(
-          searchQuery as string,
-          "Products"
-        );
-        const categoriesData = await fetchDataByQuery(
-          searchQuery as string,
-          "Category"
-        );
-        setProducts(productsData as ProductsData[]);
-        setCategories(categoriesData as CategoriesData[]);
-      } catch (error) {
-        console.error("Error fetching products:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-  }, [searchQuery]);
-
-  return (
-    <main className={styles.catalog_page_style}>
-      <FilterSearchBar />
-      <Suspense fallback={<div>Loading...</div>}>
-        {products.length !== 0 && !loading ? (
-          <>
-            <Categories categoriesDataByQuery={categories} />
-            <Products productsDataByQuery={products} />
-          </>
-        ) : (
-          <NoResults />
-        )}
-      </Suspense>
-    </main>
-  );
+  <></>
 }
