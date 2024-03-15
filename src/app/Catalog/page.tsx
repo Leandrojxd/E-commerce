@@ -7,7 +7,7 @@ import Products from "@/components/templates/Products";
 import { CategoriesData, ProductsData } from "@/pages/api/DataType";
 import { fetchDataByQuery } from "@/pages/api/Services";
 import styles from "public/home.module.css";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Catalog({searchParams}:{searchParams:{q:string | null}}) {
   const [categories, setCategories] = useState<CategoriesData[]>([]);
@@ -52,7 +52,7 @@ export default function Catalog({searchParams}:{searchParams:{q:string | null}})
           )
         ) : (
           <>
-            Loading
+            Loading...
           </>
         )}
     </main>
